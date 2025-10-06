@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Wave Crypto Insights — Home</title>
+  <meta name="description" content="Elliott Wave analysis and daily crypto, gold & market insights." />
+
+</head>
+<body>
+
+  <!-- ============ HEADER (Sticky) ============ -->
+  <header class="header" role="banner">
+    <div class="brand">
+      <div class="logo" aria-hidden>
+        <img src="./assets/main-logo.png" alt="main logo">
+      </div>
+      <div>
+        <div class="site-title">Wave Crypto Insights</div>
+        <div class="site-sub">Elliott Wave analysis • Crypto & Markets</div>
+      </div>
+    </div>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="#">Home</a>
+      <a href="#markets">Markets</a>
+      <a href="#wave">Elliott Wave</a>
+      <a href="#projects">Crypto Projects</a>
+      <a href="#blog">Blog</a>
+      <a class="cta" href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <!-- ============ PAGE WRAPPER ============ -->
+  <div class="site">
+
+    <!-- ============ HERO (full-width) ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <!-- Main hero card with Snapshot + Latest Insight -->
+      <div class="hero-card market-snapshot">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <h1 id="hero-title" style="margin:0">Daily Market Brief — BTC, ETH, Gold</h1>
+            <p class="muted" style="margin:6px 0 0 0">Short Elliott Wave take and top trade ideas. Not financial advice.</p>
+          </div>
+          <div class="pill">Updated: <!-- --><!-- JS will fill time --> <span id="updated-time">—</span></div>
+        </div>
+
+        <!-- Small ticker list (replace prices via JS) -->
+        <div class="tickers" aria-hidden>
+          <!-- Example ticker; replicate for more -->
+          <div class="ticker">
+            <div style="display:flex;flex-direction:column">
+              <div class="sym">BTC/USD</div>
+              <div class="muted" style="font-size:12px">Bitcoin</div>
+            </div>
+            <div style="margin-left:auto;text-align:right">
+              <div class="price">$<span id="btc-price">--</span></div>
+              <div class="muted small" id="btc-change">--</div>
+            </div>
+          </div>
+
+          <div class="ticker">
+            <div style="display:flex;flex-direction:column">
+              <div class="sym">ETH/USD</div>
+              <div class="muted" style="font-size:12px">Ethereum</div>
+            </div>
+            <div style="margin-left:auto;text-align:right">
+              <div class="price">$<span id="eth-price">--</span></div>
+              <div class="muted small" id="eth-change">--</div>
+            </div>
+          </div>
+
+          <div class="ticker">
+            <div style="display:flex;flex-direction:column">
+              <div class="sym">XAU/USD</div>
+              <div class="muted" style="font-size:12px">Gold</div>
+            </div>
+            <div style="margin-left:auto;text-align:right">
+              <div class="price">$<span id="gold-price">--</span></div>
+              <div class="muted small" id="gold-change">--</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Highlight of today's top analysis -->
+        <div style="margin-top:6px">
+          <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="pill">Elliott Wave</div>
+              <div class="muted">Short term: Wave 4 finishing — watch $XXXXX zone</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="pill" id="read-latest">Read latest</button>
+              <button class="pill" id="share-btn">Share</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column: quick stats + ad slot -->
+      <aside class="hero-card hero-side">
+        <div class="stat">
+          <div class="muted">Portfolio snapshot (demo)</div>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+            <div style="font-weight:700">Total P/L</div>
+            <div class="up">+2.4%</div>
+          </div>
+        </div>
+
+        <div class="ad-slot" aria-label="Ad placeholder">
+          <!-- AdSense placeholder: replace with actual ad unit when live. Keep sizes responsive. -->
+          Ad Slot (300×250 recommended)
+        </div>
+
+        <div class="stat">
+          <div class="muted">Top Watchlist</div>
+          <div style="margin-top:8px">
+            <div class="muted">BTC — Watch 1.0 — Support 50k</div>
+            <div class="muted">ETH — Watch 0.8 — Support 3.2k</div>
+          </div>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- ============ MAIN COLUMN (Left) ============ -->
+    <main class="main-column" id="main" role="main">
+
+      <!-- Latest Analysis Grid -->
+      <section>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <h2 style="margin:0">Latest Analysis</h2>
+          <div class="muted">Showing latest 8 insights</div>
+        </div>
+
+        <div class="post-grid" id="post-grid">
+
+          <!-- Example card - duplicate/replace from JS or server rendering -->
+          <article class="card" tabindex="0">
+            <div class="kicker">Crypto • Wave Analysis</div>
+            <h3>Bitcoin — Short term wave count suggests pullback to 61.8%</h3>
+            <p>Quick summary: Bitcoin may be finishing wave 4. Watch 51k-48k for support. Fibonacci levels discussed.</p>
+            <div class="meta">
+              <div class="muted">Oct 3, 2025</div>
+              <div class="muted">•</div>
+              <div class="muted">By Wave Analyst</div>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="kicker">Markets • Gold</div>
+            <h3>Gold outlook — Elliott wave + macro liquidity</h3>
+            <p>Summary: Gold shows corrective structure; a break above 2140 could open a larger impulse.</p>
+            <div class="meta">
+              <div class="muted">Oct 2, 2025</div>
+              <div class="muted">•</div>
+              <div class="muted">By Wave Analyst</div>
+            </div>
+          </article>
+
+          <!-- more cards (placeholders) -->
+          <article class="card">
+            <div class="kicker">Crypto Projects</div>
+            <h3>Project Alpha — fundamentals and on-chain metrics</h3>
+            <p>Quick project review: tokenomics, liquidity, and possible catalysts.</p>
+            <div class="meta"><div class="muted">Sep 29, 2025</div></div>
+          </article>
+
+          <article class="card">
+            <div class="kicker">Education</div>
+            <h3>Elliott Wave basics — Wave 1 to Wave 5 explained (simple)</h3>
+            <p>Beginner friendly guide to recognizing wave patterns and using Fibonacci for targets.</p>
+            <div class="meta"><div class="muted">Sep 25, 2025</div></div>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- Placeholder for tools or larger featured article -->
+      <section style="margin-top:6px">
+        <div class="card">
+          <h3 style="margin-top:0">Featured: How I analyze BTC with Elliott Wave (Case Study)</h3>
+          <p class="muted">Longer form article here. Great place for a primary ad or newsletter signup after first paragraph.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="pill">Read full</button>
+            <button class="pill">Save</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ SIDEBAR (Right) ============ -->
+    <aside class="sidebar">
+
+      <div class="ad-slot">Top Sidebar Ad (300×600 or responsive)</div>
+
+      <div class="popular">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div style="font-weight:700">Popular</div>
+          <div class="muted">Last 30 days</div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li>• BTC wave count that nailed top (case study)</li>
+          <li>• How to use Fibonacci with Elliott Wave</li>
+          <li>• Best crypto projects Q3 2025</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;gap:10px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(180deg,var(--gold), #b88f34);display:grid;place-items:center;font-weight:700;color:#071014">LN</div>
+          <div>
+            <div style="font-weight:700">Newsletter</div>
+            <div class="muted" style="font-size:13px">Get short Elliott Wave insights every morning.</div>
+          </div>
+        </div>
+        <form style="margin-top:10px;display:flex;gap:8px" onsubmit="event.preventDefault(); alert('Subscribe demo — integrate your mailing provider');">
+          <input type="email" placeholder="you@example.com" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)" required>
+          <button class="pill" type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700">Quick Tools</div>
+        <div style="margin-top:8px" class="muted">Position size calc • Risk % • Fibonacci retrace (coming soon)</div>
+      </div>
+
+    </aside>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="small">© Wave Crypto Insights — Not financial advice. Always do your own research.</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="muted" href="#">About</a>
+        <a class="muted" href="#">Contact</a>
+        <a class="muted" href="#">Privacy</a>
+      </div>
+    </footer>
+
+  </div>
+
+ 
+  <script src="./app.js"> </script>
+</body>
+</html>
