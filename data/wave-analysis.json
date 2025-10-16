@@ -1,27 +1,26 @@
 [
   {
-    "title": "Bitcoin — 2025-10-17 Bitcoin Wavy Update",
-    "date": "2025-10-07",
-    "author": "Wave Analyst",
+    "category": "Wave Analysis",
+    "title": "Bitcoin — Short term wave count suggests pullback to 61.8%",
     "excerpt": "Bitcoin may be finishing wave 4. Watch 51k–48k for support. Fibonacci levels discussed.",
-    "category": "Wave Analysis",
-    "url": "../wave-analysis/post-2025-10-07-bitcoin-wave.html",
-    "featured": true
-  },
-  {
-    "title": "Ethereum outlook — Elliott wave + liquidity update",
-    "date": "2025-10-06",
-    "author": "Wave Analyst",
-    "excerpt": "Ethereum showing corrective wave; potential breakout above $3,500 could begin a new impulse.",
-    "category": "Wave Analysis",
-    "url": "../wave-analysis/post-2025-10-06-eth-wave.html"
-  },
-  {
-    "title": "XRP analysis — sideways accumulation structure",
     "date": "2025-10-05",
     "author": "Wave Analyst",
-    "excerpt": "XRP forming complex correction; breakout levels $0.62–$0.68 remain key.",
+    "url": "./posts/post-2025-10-07-bitcoin-wave.html"
+  },
+  {
     "category": "Wave Analysis",
-    "url": "../wave-analysis/post-2025-10-05-xrp-wave.html"
+    "title": "Ethereum — Flat correction likely before wave 3 resumes",
+    "excerpt": "ETH looks to be forming a classic expanded flat. Breakout above $3.4k would confirm.",
+    "date": "2025-10-04",
+    "author": "Wave Analyst",
+    "url": "./posts/eth-wave5.html"
+  },
+  {
+    "category": "Wave Analysis",
+    "title": "Solana — Triangle correction likely before wave 3 resumes",
+    "excerpt": "SOL looks to be forming a classic expanded flat. Breakout above $3.4k would confirm.",
+    "date": "2025-10-04",
+    "author": "Wave Analyst",
+    "url": "./posts/eth-wave5.html"
   }
 ]

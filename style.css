@@ -317,6 +317,7 @@ footer .small {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.02);
   font-size: 13px;
+  color: white;
 }
 
 /* ------------------ Responsive ------------------ */
