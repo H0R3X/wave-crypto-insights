@@ -198,6 +198,26 @@
         }
       });
     }
+
+        // ✅ Image viewer setup
+    const viewer = document.getElementById('imageViewer');
+    if (viewer) {
+      const viewerImg = viewer.querySelector('img');
+      document.querySelectorAll('.viewable-img').forEach(img => {
+        img.addEventListener('click', () => {
+          viewerImg.src = img.src;
+          viewer.classList.add('active');
+        });
+      });
+      viewer.addEventListener('click', () => {
+        viewer.classList.remove('active');
+        setTimeout(() => viewerImg.src = '', 250);
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape') viewer.classList.remove('active');
+      });
+    }
+
   }
 
   // DOM ready safe init

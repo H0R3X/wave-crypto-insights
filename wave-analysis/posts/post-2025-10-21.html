@@ -44,14 +44,14 @@
 
   <div class="site">
     <main class="main-column">
-      <article class="card">
+      <article class="card post-content">
         <h1>Post Title Here</h1>
         <p class="muted">By Wave Analyst • Oct 7, 2025</p>
 
-        <!-- NOTE: Replace with your chart image -->
-        <img src="../../assets/posts/example.png" alt="Analysis chart">
+        <!-- ✅ Clickable full-screen image -->
+        <img src="/assets/posts/example.png" alt="Analysis chart" class="viewable-img">
 
-        <p>Write your article text here...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo modi suscipit laudantium officia ipsa accusantium vitae, voluptatum debitis molestiae soluta porro corporis animi laborum doloremque quod similique perferendis deserunt rerum numquam distinctio culpa sapiente, temporibus necessitatibus. Veniam beatae odit optio?</p>
       </article>
     </main>
   </div>
@@ -59,6 +59,11 @@
   <footer>
     <div class="small">© Wave Crypto Insights — Not financial advice.</div>
   </footer>
+
+  <!-- ✅ Image viewer overlay (added once globally) -->
+  <div class="image-viewer-overlay" id="imageViewer">
+    <img src="" alt="Full-size view">
+  </div>
 
   <script src="../../app.js"></script>
 </body>
