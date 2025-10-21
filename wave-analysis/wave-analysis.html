@@ -17,30 +17,28 @@
       </div>
     </div>
 
-    <nav class="nav desktop-nav">
+    <nav class="nav">
       <a href="../index.html">Home</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
-      <a href="#">Wave Analysis</a>
-      <a href="#">Top Crypto Projects</a>
-      <a href="#">News</a>
-      <a href="#">Tools</a>
+      <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="../news/news.html">News</a>
+      <a href="../tools/tools.html">Tools</a>
     </nav>
 
-    <!-- Mobile Hamburger -->
-    <button class="burger" id="burgerBtn">
+    <button class="burger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- Mobile Overlay -->
   <div class="mobile-menu-overlay" id="mobileMenu">
     <nav class="mobile-menu-links">
       <a href="../index.html">Home</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
-      <a href="#">Wave Analysis</a>      
-      <a href="#">Top Crypto Projects</a>
-      <a href="#">News</a>
-      <a href="#">Tools</a>
+      <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="../news/news.html">News</a>
+      <a href="../tools/tools.html">Tools</a>
     </nav>
   </div>
 
@@ -48,7 +46,9 @@
     <main class="main-column">
       <section>
         <h2 style="margin:0 0 8px 0">Wave Analysis</h2>
-        <div class="post-grid" id="wave-grid"></div>
+        <div class="post-grid" id="wave-grid">
+          <!-- posts injected by js (load-wave.js) or static content -->
+        </div>
       </section>
     </main>
 
@@ -59,14 +59,14 @@
     <footer>
       <div class="small">© Wave Crypto Insights — Not financial advice.</div>
       <div style="display:flex;gap:12px;">
-        <a class="muted" href="#">About</a>
-        <a class="muted" href="#">Contact</a>
-        <a class="muted" href="#">Privacy</a>
+        <a class="muted" href="../about/about.html">About</a>
+        <a class="muted" href="../contact/contact.html">Contact</a>
+        <a class="muted" href="../privacy/privacy.html">Privacy</a>
       </div>
     </footer>
   </div>
 
-  <script src="../js/load-wave.js"></script>
   <script src="../app.js"></script>
+  <script src="../js/load-wave.js"></script>
 </body>
 </html>

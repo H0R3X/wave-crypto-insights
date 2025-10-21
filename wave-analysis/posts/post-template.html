@@ -3,48 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../../style.css">
   <title>Post Title | Wave Crypto Insights</title>
   <meta name="description" content="Brief description of the article.">
 </head>
 <body>
   <header class="header">
     <div class="brand">
-      <div class="logo">
-        <img src="../assets/main-logo.png" alt="main logo">
-      </div>
+      <div class="logo"><img src="../../assets/main-logo.png" alt="main logo"></div>
       <div>
         <div class="site-title">Wave Crypto Insights</div>
         <div class="site-sub">Elliott Wave analysis • Crypto Insights</div>
       </div>
     </div>
 
-    <!-- ✅ Desktop Navigation -->
-    <nav class="nav desktop-nav">
-      <a href="../index.html">Home</a>
-      <a href="./wave-analysis.html">Wave Analysis</a>
-      <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
-      <a href="#">Top Crypto Projects</a>
-      <a href="#">News</a>
+    <nav class="nav">
+      <a href="../../index.html">Home</a>
+      <a href="../../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
+      <a href="../../wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="../../top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="../../news/news.html">News</a>
+      <a href="../../tools/tools.html">Tools</a>
     </nav>
 
-    <!-- ✅ Mobile Burger Button -->
     <button class="burger" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- ✅ Mobile Fullscreen Menu Overlay -->
   <div class="mobile-menu-overlay" id="mobileMenu">
-    <div class="mobile-menu-links">
-      <a href="../index.html">Home</a>
-      <a href="./wave-analysis.html">Wave Analysis</a>
-      <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
-      <a href="#">Top Crypto Projects</a>
-      <a href="#">News</a>
-    </div>
+    <nav class="mobile-menu-links">
+      <a href="../../index.html">Home</a>
+      <a href="../../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
+      <a href="../../wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="../../top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="../../news/news.html">News</a>
+      <a href="../../tools/tools.html">Tools</a>
+    </nav>
   </div>
 
   <div class="site">
@@ -53,8 +48,8 @@
         <h1>Post Title Here</h1>
         <p class="muted">By Wave Analyst • Oct 7, 2025</p>
 
-        <!-- ✅ Replace this image later with relevant chart -->
-        <img src="../assets/posts/example.png" alt="Analysis chart">
+        <!-- NOTE: Replace with your chart image -->
+        <img src="../../assets/posts/example.png" alt="Analysis chart">
 
         <p>Write your article text here...</p>
       </article>
@@ -65,20 +60,6 @@
     <div class="small">© Wave Crypto Insights — Not financial advice.</div>
   </footer>
 
-  <!-- ✅ Add this only if burger logic isn't already in app.js globally -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const burger = document.querySelector('.burger');
-      const mobileMenu = document.getElementById('mobileMenu');
-      if (burger && mobileMenu) {
-        burger.addEventListener('click', () => {
-          mobileMenu.classList.toggle('active');
-        });
-        mobileMenu.addEventListener('click', () => {
-          mobileMenu.classList.remove('active');
-        });
-      }
-    });
-  </script>
+  <script src="../../app.js"></script>
 </body>
 </html>

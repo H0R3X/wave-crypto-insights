@@ -9,52 +9,46 @@
 </head>
 <body>
 
-  <!-- ============ HEADER (Sticky) ============ -->
-  <header class="header" role="banner">
+  <!-- HEADER -->
+  <header class="header">
     <div class="brand">
-      <div class="logo" aria-hidden>
-        <img src="./assets/main-logo.png" alt="main logo">
-      </div>
+      <div class="logo" aria-hidden><img src="./assets/main-logo.png" alt="main logo"></div>
       <div>
         <div class="site-title">Wave Crypto Insights</div>
         <div class="site-sub">Elliott Wave analysis • Crypto Insights</div>
       </div>
     </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="nav desktop-nav" role="navigation" aria-label="Main navigation">
-      <a href="#">Home</a>
+    <nav class="nav">
+      <a href="./index.html">Home</a>
       <a href="./elliott-wave-academy/academy.html">Elliott Wave Academy</a>
       <a href="./wave-analysis/wave-analysis.html">Wave Analysis</a>
-      <a href="#projects">Top Crypto Projects</a>
-      <a href="#news">News</a>
-      <a href="#tools">Tools</a>
+      <a href="./top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="./news/news.html">News</a>
+      <a href="./tools/tools.html">Tools</a>
     </nav>
 
-    <!-- Mobile Hamburger Button -->
-    <button class="burger" id="burgerBtn" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <!-- mobile burger -->
+    <button class="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- Mobile Fullscreen Overlay Menu -->
+  <!-- Mobile overlay -->
   <div class="mobile-menu-overlay" id="mobileMenu">
     <nav class="mobile-menu-links">
-      <a href="#">Home</a>
+      <a href="./index.html">Home</a>
       <a href="./elliott-wave-academy/academy.html">Elliott Wave Academy</a>
       <a href="./wave-analysis/wave-analysis.html">Wave Analysis</a>
-      <a href="#projects">Top Crypto Projects</a>
-      <a href="#news">News</a>
-      <a href="#tools">Tools</a>
+      <a href="./top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="./news/news.html">News</a>
+      <a href="./tools/tools.html">Tools</a>
     </nav>
   </div>
 
-  <!-- ============ PAGE WRAPPER ============ -->
+  <!-- SITE -->
   <div class="site">
-
-    <!-- ============ HERO (full-width) ============ -->
+    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-card market-snapshot">
         <div style="display:flex;justify-content:space-between;align-items:center">
@@ -103,16 +97,14 @@
           </div>
         </div>
 
-        <div style="margin-top:6px">
-          <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
-            <div style="display:flex;gap:12px;align-items:center">
-              <div class="pill">Elliott Wave</div>
-              <div class="muted">Short term: Wave 4 finishing — watch $XXXXX zone</div>
-            </div>
-            <div style="display:flex;gap:8px">
-              <button class="pill" id="read-latest">Read latest</button>
-              <button class="pill" id="share-btn">Share</button>
-            </div>
+        <div style="margin-top:6px;display:flex;gap:12px;align-items:center;justify-content:space-between">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="pill">Elliott Wave</div>
+            <div class="muted">Short term: Wave 4 finishing — watch $XXXXX zone</div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="pill" id="read-latest">Read latest</button>
+            <button class="pill" id="share-btn">Share</button>
           </div>
         </div>
       </div>
@@ -122,7 +114,7 @@
       </aside>
     </section>
 
-    <!-- MAIN SECTION -->
+    <!-- MAIN -->
     <main class="main-column" id="main" role="main">
       <section>
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
@@ -130,20 +122,48 @@
           <div class="muted">Showing latest 8 insights</div>
         </div>
 
-        <div class="post-grid" id="post-grid"></div>
+        <div class="post-grid" id="post-grid">
+          <!-- posts injected by /js/load-posts.js (your JSON loader). If none, script can show fallback -->
+        </div>
+        <p id="no-posts-msg" class="muted" style="display:none">No posts available yet.</p>
       </section>
     </main>
 
     <aside class="sidebar">
-      ...
+      <div class="ad-slot"></div>
+      <div class="popular">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div style="font-weight:700">Popular</div>
+          <div class="muted">Last 30 days</div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li>• BTC wave count that nailed top (case study)</li>
+          <li>• How to use Fibonacci with Elliott Wave</li>
+          <li>• Best crypto projects Q3 2025</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;gap:10px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(180deg,var(--gold), #b88f34);display:grid;place-items:center;font-weight:700;color:#071014">LN</div>
+          <div>
+            <div style="font-weight:700">Newsletter</div>
+            <div class="muted" style="font-size:13px">Get short Elliott Wave insights every morning.</div>
+          </div>
+        </div>
+        <form style="margin-top:10px;display:flex;gap:8px" onsubmit="event.preventDefault(); alert('Subscribe demo — integrate your mailing provider');">
+          <input type="email" placeholder="you@example.com" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)" required>
+          <button class="pill" type="submit">Subscribe</button>
+        </form>
+      </div>
     </aside>
 
     <footer>
       <div class="small">© Wave Crypto Insights — Not financial advice. Always do your own research.</div>
       <div style="display:flex;gap:12px;align-items:center">
-        <a class="muted" href="#">About</a>
-        <a class="muted" href="#">Contact</a>
-        <a class="muted" href="#">Privacy</a>
+        <a class="muted" href="./about/about.html">About</a>
+        <a class="muted" href="./contact/contact.html">Contact</a>
+        <a class="muted" href="./privacy/privacy.html">Privacy</a>
       </div>
     </footer>
   </div>
