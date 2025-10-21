@@ -1,19 +1,18 @@
+@charset "UTF-8";
 /* ==========================
-       Theme Variables (SCSS friendly)
-       Convert these to SCSS variables if you use a preprocessor.
-       Example SCSS mapping: $bg: var(--bg); => $bg: #0b0d10;
-       ========================== */
+   Theme Variables
+   ========================== */
 :root {
-  --bg: #08090b; /* main background */
-  --panel: #0f1113; /* cards / panels */
-  --muted: #9aa3ad; /* secondary text */
-  --text: #e6eef3; /* primary text */
-  --gold: #d6b24a; /* gold accent */
-  --green: #3bd07a; /* up color */
-  --red: #ff6b6b; /* down color */
+  --bg: #08090b;
+  --panel: #0f1113;
+  --muted: #9aa3ad;
+  --text: #e6eef3;
+  --gold: #d6b24a;
+  --green: #3bd07a;
+  --red: #ff6b6b;
   --glass: rgba(255,255,255,0.02);
   --radius: 12px;
-  --max-width: 1400px; /* wide layout */
+  --max-width: 1400px;
   --gap: 20px;
   --transition: 220ms ease;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -26,6 +25,8 @@
 
 html, body {
   height: 100%;
+  min-height: 100%; /* ✅ background fix */
+  background-attachment: fixed; /* ✅ background fix */
 }
 
 body {
@@ -36,7 +37,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.45;
-  padding: 24px; /* page padding for wide layout */
+  padding: 24px;
 }
 
 a {
@@ -55,14 +56,14 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 340px; /* main + sidebar */
+  grid-template-columns: 1fr 340px;
   gap: var(--gap);
   align-items: start;
 }
 
-/* -- Header (sticky) -- */
+/* ------------------ Header ------------------ */
 .header {
-  position: sticky; /* sticky at top */
+  position: sticky;
   top: 18px;
   z-index: 40;
   display: flex;
@@ -107,7 +108,7 @@ img {
   color: var(--muted);
 }
 
-/* Nav */
+/* ✅ Desktop Nav */
 .nav {
   display: flex;
   gap: 12px;
@@ -122,23 +123,61 @@ img {
 }
 
 .nav a:hover {
-  Color: var(--text);
+  color: var(--text);
   background: var(--glass);
   transition: var(--transition);
 }
 
-/* CTA */
-.cta {
-  background: linear-gradient(90deg, var(--gold), #c9a941);
-  padding: 8px 14px;
-  border-radius: 10px;
-  color: #071014;
-  font-weight: 700;
+/* ✅ Burger (hidden on desktop) */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 24px;
+  height: 3px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+/* ✅ Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.mobile-menu-overlay.active {
+  display: flex;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.mobile-menu-links a {
+  color: var(--text);
+  font-weight: 500;
 }
 
 /* ------------------ Hero ------------------ */
 .hero {
-  grid-column: 1/-1; /* full width */
+  grid-column: 1/-1;
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: var(--gap);
@@ -196,19 +235,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-.hero-cta {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.stat {
-  padding: 12px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
-  border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
 /* ------------------ Main Content ------------------ */
@@ -346,12 +372,16 @@ footer .small {
   .header {
     top: 8px;
   }
-  .nav {
+  /* ✅ Hide desktop nav */
+  .desktop-nav {
     display: none;
-  } /* simple mobile: hide full nav; you can add burger menu */
+  }
+  /* ✅ Show burger on mobile */
+  .burger {
+    display: flex;
+  }
 }
-/* ------------------ Flash animations for price updates ------------------ */
-/* apply flash to the whole ticker for better visibility */
+/* ------------------ Flash animations ------------------ */
 .ticker.flash-up {
   animation: flashGreen 0.5s;
 }

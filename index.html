@@ -21,26 +21,41 @@
       </div>
     </div>
 
-    <nav class="nav" role="navigation" aria-label="Main navigation">
+    <!-- Desktop Navigation -->
+    <nav class="nav desktop-nav" role="navigation" aria-label="Main navigation">
       <a href="#">Home</a>
+      <a href="./elliott-wave-academy/academy.html">Elliott Wave Academy</a>
       <a href="./wave-analysis/wave-analysis.html">Wave Analysis</a>
-      <a href="#wave">Elliott Wave Academy</a>
       <a href="#projects">Top Crypto Projects</a>
       <a href="#news">News</a>
-      <!-- <a href="#markets">Other markets</a> -->
       <a href="#tools">Tools</a>
-      <!-- <a href="#blog">Blog</a> -->
-      <!-- <a class="cta" href="#subscribe">Subscribe</a> -->
     </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="burger" id="burgerBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <!-- Mobile Fullscreen Overlay Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <nav class="mobile-menu-links">
+      <a href="#">Home</a>
+      <a href="./elliott-wave-academy/academy.html">Elliott Wave Academy</a>
+      <a href="./wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="#projects">Top Crypto Projects</a>
+      <a href="#news">News</a>
+      <a href="#tools">Tools</a>
+    </nav>
+  </div>
 
   <!-- ============ PAGE WRAPPER ============ -->
   <div class="site">
 
     <!-- ============ HERO (full-width) ============ -->
     <section class="hero" aria-labelledby="hero-title">
-
-      <!-- Main hero card with Snapshot + Latest Insight -->
       <div class="hero-card market-snapshot">
         <div style="display:flex;justify-content:space-between;align-items:center">
           <div>
@@ -50,9 +65,7 @@
           <div class="pill">Updated: <span id="updated-time">—</span></div>
         </div>
 
-        <!-- Small ticker list -->
         <div class="tickers" aria-hidden>
-
           <div class="ticker">
             <img src="./assets/btc.svg" alt="BTC" style="width:20px;height:20px">
             <div style="display:flex;flex-direction:column">
@@ -88,10 +101,8 @@
               <div class="muted small" id="xrp-change">--</div>
             </div>
           </div>
-
         </div>
 
-        <!-- Highlight -->
         <div style="margin-top:6px">
           <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
             <div style="display:flex;gap:12px;align-items:center">
@@ -106,16 +117,12 @@
         </div>
       </div>
 
-      <!-- Right column (hero sidebar) -->
       <aside class="hero-card hero-side">
-  <div class="ad-slot" aria-label="Ad placeholder"></div>
-</aside>
-
+        <div class="ad-slot" aria-label="Ad placeholder"></div>
+      </aside>
     </section>
 
-    <!-- MAIN + SIDEBAR stay same -->
-    <!-- (Gold article can be replaced with Crypto project/analysis later) -->
-
+    <!-- MAIN SECTION -->
     <main class="main-column" id="main" role="main">
       <section>
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
@@ -123,46 +130,11 @@
           <div class="muted">Showing latest 8 insights</div>
         </div>
 
-        <div class="post-grid" id="post-grid">
-          <article class="card" tabindex="0">
-            <div class="kicker">Crypto • Wave Analysis</div>
-            <h3>Bitcoin — Short term wave count suggests pullback to 61.8%</h3>
-            <p>Quick summary: Bitcoin may be finishing wave 4. Watch 51k-48k for support. Fibonacci levels discussed.</p>
-            <div class="meta"><div class="muted">Oct 3, 2025</div> <div class="muted">•</div> <div class="muted">By Wave Analyst</div></div>
-          </article>
-
-          <article class="card" tabindex="0">
-            <div class="kicker">Crypto • XRP</div>
-            <h3>XRP outlook — Elliott wave + liquidity update</h3>
-            <p>Summary: XRP is showing corrective structure; a break above $0.65 could open a larger impulse.</p>
-            <div class="meta"><div class="muted">Oct 2, 2025</div> <div class="muted">•</div> <div class="muted">By Wave Analyst</div></div>
-          </article>
-          <article class="card" tabindex="0">
-            <div class="kicker">Crypto • KAS</div>
-            <h3>KAS outlook — Elliott wave + liquidity update</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio excepturi quisquam maiores esse officiis inventore doloribus ab laudantium consectetur?</p>
-            <div class="meta"><div class="muted">Oct 2, 2025</div> <div class="muted">•</div> <div class="muted">By Wave Analyst</div></div>
-          </article>
-          <article class="card" tabindex="0">
-            <div class="kicker">Crypto • AR</div>
-            <h3>AR outlook — Elliott wave + liquidity update</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio excepturi quisquam maiores esse officiis inventore doloribus ab laudantium consectetur?</p>
-            <div class="meta"><div class="muted">Oct 2, 2025</div> <div class="muted">•</div> <div class="muted">By Wave Analyst</div></div>
-          </article>
-          <article class="card" tabindex="0">
-            <div class="kicker">Crypto • LTC</div>
-            <h3>LTC outlook — Elliott wave + liquidity update</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio excepturi quisquam maiores esse officiis inventore doloribus ab laudantium consectetur?</p>
-            <div class="meta"><div class="muted">Oct 2, 2025</div> <div class="muted">•</div> <div class="muted">By Wave Analyst</div></div>
-          </article>
-
-          <!-- More crypto cards... -->
-        </div>
+        <div class="post-grid" id="post-grid"></div>
       </section>
     </main>
 
     <aside class="sidebar">
-      <!-- unchanged -->
       ...
     </aside>
 
@@ -174,10 +146,9 @@
         <a class="muted" href="#">Privacy</a>
       </div>
     </footer>
-
   </div>
+
   <script src="./app.js"></script>
   <script src="./js/load-posts.js"></script>
-  <!-- <script src="./js/adblock-detect.js"></script> -->
 </body>
 </html>

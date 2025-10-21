@@ -65,3 +65,20 @@
   else init();
 })();
 
+// ✅ Mobile Menu Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (!burger || !mobileMenu) return;
+
+  burger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+  });
+
+  // Close menu when clicking a link
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  });
+});
