@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================
    Theme Variables (SCSS friendly)
    ========================== */
@@ -22,17 +23,41 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
+/* 🎨 Animated luxury gradient background + gold shimmer */
+@keyframes bgMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes goldPulse {
+  0%, 95%, 100% {
+    filter: brightness(1);
+  }
+  96%, 99% {
+    filter: brightness(1.2) saturate(1.1);
+  }
+}
+html {
   min-height: 100%;
-  background-attachment: fixed; /* ensures gradient doesn't look boxed on scroll */
+  background: linear-gradient(135deg, #08090b 0%, #1e1505 25%, #100c03 65%, #1e1505 100%);
+  background-size: 300% 300%;
+  animation: bgMove 45s ease-in-out infinite, goldPulse 180s ease-in-out infinite; /* faster gradient, slow shimmer */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #08090b;
 }
 
 body {
+  min-height: 100%;
   margin: 0;
   font-family: var(--font-sans);
-  /* main background gradient (applied globally via body/html) */
-  background: linear-gradient(180deg, var(--bg) 0%, #1e1505 100%);
+  background: transparent;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,7 +81,7 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 340px; /* main + sidebar */
+  grid-template-columns: 1fr 340px;
   gap: var(--gap);
   align-items: start;
 }
@@ -129,7 +154,6 @@ img {
 }
 
 /* ------------------ Burger (mobile) ------------------ */
-/* Hidden on desktop; shown on small screens */
 .burger {
   display: none;
   flex-direction: column;
@@ -153,7 +177,7 @@ img {
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85); /* chosen: semi-transparent black glass */
+  background: rgba(0, 0, 0, 0.85);
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
   display: none;
@@ -380,11 +404,9 @@ footer .small {
   .header {
     top: 8px;
   }
-  /* hide desktop nav */
   .nav {
     display: none;
   }
-  /* show burger */
   .burger {
     display: flex;
   }
