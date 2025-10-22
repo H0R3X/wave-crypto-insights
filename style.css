@@ -241,7 +241,7 @@ img {
   gap: 12px;
   padding: 10px 12px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
   min-width: 180px;
   border: 1px solid rgba(255, 255, 255, 0.02);
 }
@@ -413,11 +413,11 @@ footer .small {
 }
 /* ------------------ Price flash animations ------------------ */
 .ticker.flash-up {
-  animation: flashGreen 0.5s;
+  animation: flashGreen 1s;
 }
 
 .ticker.flash-down {
-  animation: flashRed 0.5s;
+  animation: flashRed 1s;
 }
 
 @keyframes flashGreen {
@@ -515,4 +515,18 @@ footer .small {
 
 .card.clickable-card:hover .coin-logo {
   transform: scale(1.08);
+  animation: logoShine 1.4s ease-in-out; /* ✨ subtle shimmer */
+}
+
+/* ✨ Gold shimmer animation for coin logos */
+@keyframes logoShine {
+  0% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.5) saturate(1.2);
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+  }
 }/*# sourceMappingURL=style.css.map */
