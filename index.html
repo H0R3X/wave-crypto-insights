@@ -61,7 +61,7 @@
 
         <div class="tickers" aria-hidden>
           <div class="ticker">
-            <img src="./assets/btc.svg" alt="BTC" style="width:20px;height:20px">
+            <img src="./assets/coins/btc.svg" alt="BTC" style="width:20px;height:20px">
             <div style="display:flex;flex-direction:column">
               <div class="sym">BTC/USD</div>
               <div class="muted" style="font-size:12px">Bitcoin</div>
@@ -73,7 +73,7 @@
           </div>
 
           <div class="ticker">
-            <img src="./assets/eth.svg" alt="ETH" style="width:20px;height:20px">
+            <img src="./assets/coins/eth.svg" alt="ETH" style="width:20px;height:20px">
             <div style="display:flex;flex-direction:column">
               <div class="sym">ETH/USD</div>
               <div class="muted" style="font-size:12px">Ethereum</div>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="ticker">
-            <img src="./assets/xrp.svg" alt="XRP" style="width:20px;height:20px">
+            <img src="./assets/coins/xrp.svg" alt="XRP" style="width:20px;height:20px">
             <div style="display:flex;flex-direction:column">
               <div class="sym">XRP/USD</div>
               <div class="muted" style="font-size:12px">XRP</div>
@@ -109,8 +109,9 @@
         </div>
       </div>
 
+      <!-- Existing hero sidebar ad -->
       <aside class="hero-card hero-side">
-        <div class="ad-slot" aria-label="Ad placeholder"></div>
+        <div class="ad-slot" aria-label="Ad placeholder (top-right)"></div>
       </aside>
     </section>
 
@@ -123,14 +124,16 @@
         </div>
 
         <div class="post-grid" id="post-grid">
-          <!-- posts injected by /js/load-posts.js (your JSON loader). If none, script can show fallback -->
+          <!-- posts injected by /js/load-posts.js -->
         </div>
         <p id="no-posts-msg" class="muted" style="display:none">No posts available yet.</p>
       </section>
+
+      <!-- ✅ Mid-feed Ad Slot (lazy-loaded for performance) -->
+      <div class="ad-slot lazy-ad" aria-label="Mid-feed ad (lazy-loaded)"></div>
     </main>
 
     <aside class="sidebar">
-      <div class="ad-slot"></div>
       <div class="popular">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
           <div style="font-weight:700">Popular</div>

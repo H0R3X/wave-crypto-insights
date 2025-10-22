@@ -483,4 +483,36 @@ footer .small {
 
 .viewable-img:hover {
   opacity: 0.9;
+}
+
+/* ------------------ Enhanced Card & Coin Logo ------------------ */
+.card.clickable-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.card.clickable-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.coin-logo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.card.clickable-card:hover .coin-logo {
+  transform: scale(1.08);
 }/*# sourceMappingURL=style.css.map */

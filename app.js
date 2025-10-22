@@ -64,7 +64,6 @@
 
   // Fetch prices from CoinGecko and update tickers
   async function fetchAndUpdatePrices() {
-    // coins: bitcoin, ethereum, ripple
     const url = 'https://api.coingecko.com/api/v3/simple/price'
       + '?ids=bitcoin,ethereum,ripple'
       + '&vs_currencies=usd'
@@ -85,11 +84,8 @@
         updateTicker('xrp', data.ripple.usd, data.ripple.usd_24h_change);
       }
 
-      // updated time (if present)
       setText('updated-time', new Date().toLocaleString());
     } catch (err) {
-      // Fail gracefully (console log for debugging)
-      // eslint-disable-next-line no-console
       console.error('CoinGecko fetch error:', err);
     }
   }
@@ -98,14 +94,11 @@
      Mobile menu / overlay toggle
      ------------------------- */
 
-  // Opens the overlay element (if present)
   function openMobileMenu(menuEl) {
     if (!menuEl) return;
     menuEl.classList.add('active');
-    // prevent background scrolling while menu open
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    // focus first link for accessibility
     const firstLink = menuEl.querySelector('a');
     if (firstLink) firstLink.focus();
   }
@@ -118,34 +111,25 @@
   }
 
   function setupMobileMenuToggle() {
-    // There may be many burger buttons across pages (but only one actual page loaded)
     const burgers = document.querySelectorAll('.burger');
     const mobileMenu = document.getElementById('mobileMenu');
-
-    if (!burgers || burgers.length === 0 || !mobileMenu) {
-      // nothing to wire
-      return;
-    }
+    if (!burgers || burgers.length === 0 || !mobileMenu) return;
 
     burgers.forEach(b => {
-      b.addEventListener('click', (e) => {
-        // toggle
+      b.addEventListener('click', () => {
         if (mobileMenu.classList.contains('active')) closeMobileMenu(mobileMenu);
         else openMobileMenu(mobileMenu);
       });
     });
 
-    // close when clicking a link inside overlay
     mobileMenu.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => closeMobileMenu(mobileMenu));
     });
 
-    // close when clicking outside the central nav links (overlay background)
     mobileMenu.addEventListener('click', (ev) => {
       if (ev.target === mobileMenu) closeMobileMenu(mobileMenu);
     });
 
-    // close on ESC
     document.addEventListener('keydown', (ev) => {
       if (ev.key === 'Escape' && mobileMenu.classList.contains('active')) {
         closeMobileMenu(mobileMenu);
@@ -161,9 +145,60 @@
     const readBtn = document.getElementById('read-latest');
     if (!readBtn) return;
     readBtn.addEventListener('click', () => {
-      // scroll to first article card
       const first = document.querySelector('#post-grid article, #wave-grid article, .post-grid article');
       if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+
+  /* -------------------------
+     Lazy-load mid-feed ad (performance optimization)
+     ------------------------- */
+
+  function setupLazyAdLoad() {
+    const lazyAd = document.querySelector('.ad-slot.lazy-ad');
+    if (!lazyAd) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // ✅ Load AdSense or any other ad only when visible
+          lazyAd.innerHTML = '<!-- Ad placeholder (lazy-loaded) -->';
+          // Example (for future integration):
+          // lazyAd.innerHTML = `<ins class="adsbygoogle"
+          //      style="display:block"
+          //      data-ad-client="ca-pub-XXXX"
+          //      data-ad-slot="XXXX"
+          //      data-ad-format="auto"
+          //      data-full-width-responsive="true"></ins>`;
+          // (adsbygoogle = window.adsbygoogle || []).push({});
+          obs.unobserve(lazyAd);
+        }
+      });
+    }, { rootMargin: '200px' }); // trigger slightly before visible
+
+    observer.observe(lazyAd);
+  }
+
+  /* -------------------------
+     Image viewer setup
+     ------------------------- */
+
+  function setupImageViewer() {
+    const viewer = document.getElementById('imageViewer');
+    if (!viewer) return;
+    const viewerImg = viewer.querySelector('img');
+    document.querySelectorAll('.viewable-img').forEach(img => {
+      img.addEventListener('click', () => {
+        viewerImg.src = img.src;
+        viewer.classList.add('active');
+      });
+    });
+    viewer.addEventListener('click', () => {
+      viewer.classList.remove('active');
+      setTimeout(() => viewerImg.src = '', 250);
+    });
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') viewer.classList.remove('active');
     });
   }
 
@@ -172,55 +207,32 @@
      ------------------------- */
 
   function init() {
-    // init live prices
     fetchAndUpdatePrices();
-    // refresh every 60s
     setInterval(fetchAndUpdatePrices, 60000);
-
-    // UI wiring
     setupMobileMenuToggle();
     setupReadLatest();
+    setupLazyAdLoad();
+    setupImageViewer();
 
-    // share button wiring (if present)
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn) {
       shareBtn.addEventListener('click', () => {
         if (navigator.share) {
-          navigator.share({ title: document.title, text: 'Latest from Wave Crypto Insights', url: location.href }).catch(() => {});
+          navigator.share({
+            title: document.title,
+            text: 'Latest from Wave Crypto Insights',
+            url: location.href
+          }).catch(() => {});
         } else {
-          // fallback copy URL
           try {
             navigator.clipboard.writeText(location.href);
             alert('Link copied to clipboard.');
-          } catch (e) {
-            // ignore
-          }
+          } catch (e) {}
         }
       });
     }
-
-        // ✅ Image viewer setup
-    const viewer = document.getElementById('imageViewer');
-    if (viewer) {
-      const viewerImg = viewer.querySelector('img');
-      document.querySelectorAll('.viewable-img').forEach(img => {
-        img.addEventListener('click', () => {
-          viewerImg.src = img.src;
-          viewer.classList.add('active');
-        });
-      });
-      viewer.addEventListener('click', () => {
-        viewer.classList.remove('active');
-        setTimeout(() => viewerImg.src = '', 250);
-      });
-      document.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Escape') viewer.classList.remove('active');
-      });
-    }
-
   }
 
-  // DOM ready safe init
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
