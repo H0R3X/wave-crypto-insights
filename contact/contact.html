@@ -6,7 +6,60 @@
   <link rel="stylesheet" href="../style.css">
   <title>Contact — Wave Crypto Insights</title>
   <meta name="description" content="Contact Wave Crypto Insights.">
+  <style>
+    /* --- Contact form styles --- */
+    form.contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    form.contact-form input,
+    form.contact-form textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      outline: none;
+      transition: border 0.2s ease;
+    }
+
+    form.contact-form input:focus,
+    form.contact-form textarea:focus {
+      border-color: var(--gold);
+    }
+
+    form.contact-form button {
+      background: var(--gold);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    form.contact-form button:hover {
+      background: #e0c15c;
+      transform: translateY(-1px);
+    }
+
+    .form-success {
+      background: rgba(0,255,0,0.08);
+      border: 1px solid rgba(0,255,0,0.15);
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 8px;
+      color: var(--green);
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
   <header class="header">
     <div class="brand">
@@ -47,7 +100,14 @@
       <section>
         <h2 style="margin:0 0 8px 0">Contact</h2>
         <div class="card">
-          <p class="muted">For inquiries, partnership requests, or technical help, contact: <strong>you@example.com</strong></p>
+          <p class="muted">We’d love to hear from you! Whether it’s a question, partnership opportunity, or technical inquiry — please reach out below.</p>
+          <form class="contact-form" action="https://formspree.io/f/mqayvbkg" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            <div class="form-success" id="formSuccess">✅ Thank you! Your message has been sent successfully.</div>
+          </form>
         </div>
       </section>
     </main>
@@ -59,14 +119,31 @@
     <footer>
       <div class="small">© Wave Crypto Insights — Not financial advice.</div>
       <div style="display:flex;gap:12px;align-items:center">
-        <a class="muted" href="/about/about.html">About</a>
-        <a class="muted" href="/contact/contact.html">Contact</a>
-        <a class="muted" href="/privacy/privacy.html">Privacy</a>
-        <a class="muted" href="/disclaimer/financial-disclaimer.html">Disclaimer</a>
+        <a class="muted" href="../about/about.html">About</a>
+        <a class="muted" href="../contact/contact.html">Contact</a>
+        <a class="muted" href="../privacy/privacy.html">Privacy</a>
+        <a class="muted" href="../terms/terms.html">Terms</a>
+        <a class="muted" href="../disclaimer/financial-disclaimer.html">Disclaimer</a>
       </div>
     </footer>
   </div>
 
   <script src="../app.js"></script>
+  <script>
+    // ✅ Show confirmation message without reloading page
+    const form = document.querySelector('.contact-form');
+    const success = document.getElementById('formSuccess');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        form.reset();
+        success.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again later.');
+      }
+    });
+  </script>
 </body>
 </html>
