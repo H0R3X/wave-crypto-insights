@@ -360,3 +360,35 @@ footer .small { color: var(--muted); font-size: 13px; }
   50%  { filter: brightness(1.5) saturate(1.2); }
   100% { filter: brightness(1) saturate(1); }
 }
+
+/* ------------------ Pagination ------------------ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.pagination button {
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.pagination button:hover {
+  background: var(--glass);
+  transform: translateY(-1px);
+}
+
+.pagination button.active {
+  background: var(--gold);
+  color: #000;
+  font-weight: 600;
+  border: none;
+}
