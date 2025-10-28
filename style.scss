@@ -392,3 +392,49 @@ footer .small { color: var(--muted); font-size: 13px; }
   font-weight: 600;
   border: none;
 }
+
+
+/* ========================== 
+   Wave Analysis — Blurred Background Card Visuals
+   ========================== */
+.card.analysis-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(15, 17, 19, 0.92), rgba(15, 17, 19, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card.analysis-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px) brightness(0.55);
+  opacity: 0.45;
+  z-index: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.card.analysis-card:hover::before {
+  transform: scale(1.05);
+  opacity: 0.6;
+  filter: brightness(1) blur(0.5px);
+}
+
+.card.analysis-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card.analysis-card h3 {
+  font-size: 19px;
+  color: #fff;
+}
+
+.card.analysis-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
+}

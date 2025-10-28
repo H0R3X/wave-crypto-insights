@@ -22,9 +22,14 @@
 
   function createCard(post) {
     const card = document.createElement('article');
-    card.className = 'card clickable-card';
+    card.className = 'card clickable-card analysis-card';
+
     const coin = detectCoinSymbol(post.title);
-    const logoSrc = coin ? `../assets/coins/${coin}.svg` : '../assets/coins/generic.png';
+    const logoSrc = coin ? `../assets/coins/${coin}.svg` : `../assets/coins/generic.png`;
+    const bgSrc = coin ? `../assets/thumbs/${coin}-bg.jpg` : `../assets/thumbs/generic-bg.jpg`;
+
+    // Assign blurred background via CSS variable
+    card.style.setProperty('--bg-image', `url(${bgSrc})`);
 
     card.innerHTML = `
       <img class="coin-logo" src="${logoSrc}" alt="${coin || 'coin'} logo">
@@ -37,6 +42,7 @@
         <div class="muted">${post.author}</div>
       </div>
     `;
+
     card.addEventListener('click', () => window.location.href = post.url);
     return card;
   }
