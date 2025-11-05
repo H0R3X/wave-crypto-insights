@@ -23,31 +23,10 @@
   box-sizing: border-box;
 }
 
-/* 🎨 Animated luxury gradient background + gold shimmer */
-@keyframes bgMove {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-@keyframes goldPulse {
-  0%, 95%, 100% {
-    filter: brightness(1);
-  }
-  96%, 99% {
-    filter: brightness(1.2) saturate(1.1);
-  }
-}
+/* ✅ Static gradient background (performance friendly) */
 html {
   min-height: 100%;
-  background: linear-gradient(135deg, #08090b 0%, #1e1505 25%, #100c03 65%, #1e1505 100%);
-  background-size: 300% 300%;
-  animation: bgMove 45s ease-in-out infinite, goldPulse 180s ease-in-out infinite; /* faster gradient, slow shimmer */
+  background: linear-gradient(135deg, rgba(38, 74, 18, 0.8117647059) 0%, #35200b 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: #08090b;
