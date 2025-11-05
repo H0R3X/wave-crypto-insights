@@ -23,7 +23,7 @@
 /* ✅ Static gradient background (performance friendly) */
 html {
   min-height: 100%;
-  background: linear-gradient(135deg, #264a12cf 0%, #35200b 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: #08090b;
@@ -191,7 +191,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Card */
 .card {
-  background: var(--panel);
+  background: #0f111375;
   padding: 16px;
   border-radius: 12px;
   border: 1px solid rgb(255, 255, 255);
