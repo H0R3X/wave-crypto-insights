@@ -438,3 +438,96 @@ footer .small { color: var(--muted); font-size: 13px; }
   transform: translateY(-3px);
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
 }
+
+//academy thumbnail
+.thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.88;
+}
+
+//enhances article layouts
+.diagram-placeholder {
+  background: rgba(255,255,255,0.04);
+  border: 1px dashed rgba(255,255,255,0.1);
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.table-sentiment {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+}
+.table-sentiment th, .table-sentiment td {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px;
+  text-align: left;
+}
+.table-sentiment th {
+  background: rgba(255,255,255,0.06);
+}
+
+
+/* ------------------ Academy article niceties ------------------ */
+.post-content h1 { margin-top: 6px; margin-bottom: 8px; }
+.post-content h2 { margin-top: 18px; margin-bottom: 8px; }
+.post-content p { margin-bottom: 12px; color: var(--text); }
+
+.diagram-placeholder {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 26px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed rgba(255,255,255,0.04);
+  margin: 18px 0;
+  cursor: default;
+}
+
+/* make placeholders keyboard accessible like images (they're also .viewable-img so viewer works) */
+.diagram-placeholder:focus { outline: 2px dashed rgba(214,178,74,0.35); }
+
+/* floating left Table of Contents (wide screens only) */
+.toc-floating {
+  display: none;
+}
+.toc-floating .toc-inner {
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border-radius: 10px;
+  padding: 12px;
+  width: 180px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.toc-title { font-weight:700; margin-bottom:8px; color:var(--muted); font-size:13px; }
+
+.toc-inner ol { margin: 0; padding-left: 16px; font-size: 14px; color: var(--muted); }
+.toc-inner ol li { margin-bottom: 6px; }
+.toc-inner ol li a { color: var(--muted); text-decoration: none; }
+.toc-inner ol li a:hover { color: var(--text); }
+
+/* place the floating TOC left of the centered site container on wide screens */
+@media (min-width: 1200px) {
+  .toc-floating {
+    display: block;
+    position: fixed;
+    top: 120px;
+    left: calc((100% - var(--max-width)) / 2 - 210px); /* sits left of main site container */
+    z-index: 80;
+  }
+}
+
+/* table improvements */
+.table-sentiment th, .table-sentiment td { color: var(--muted); }
+.table-sentiment td { font-size: 14px; }
+
+/* ensure academy content images (diagram placeholders) are clickable for your image viewer */
+.diagram-placeholder.viewable-img { cursor: zoom-in; }
