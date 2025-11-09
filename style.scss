@@ -256,11 +256,11 @@ footer .small { color: var(--muted); font-size: 13px; }
 .ticker.flash-down { animation: flashRed 1s; }
 
 @keyframes flashGreen {
-  from { background-color: rgba(59, 208, 122, 0.18); }
+  from { background-color: rgba(22, 218, 104, 0.377); }
   to { background-color: transparent; }
 }
 @keyframes flashRed {
-  from { background-color: rgba(255, 107, 107, 0.18); }
+  from { background-color: rgba(255, 107, 107, 0.377); }
   to { background-color: transparent; }
 }
 
@@ -518,4 +518,4 @@ footer .small { color: var(--muted); font-size: 13px; }
 .table-sentiment td { font-size: 14px; }
 
 /* ensure academy content images (diagram placeholders) are clickable for your image viewer */
-.diagram-placeholder.viewable-img { cursor: zoom-in; }
+.diagram-placeholder.viewable-img { cursor:pointer; }
