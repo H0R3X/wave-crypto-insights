@@ -349,6 +349,10 @@ footer .small {
   color: var(--muted);
 }
 
+.muted-2 {
+  color: #706c46;
+}
+
 .pill {
   padding: 6px 9px;
   border-radius: 999px;
@@ -674,6 +678,7 @@ footer .small {
   margin-bottom: 8px;
   color: var(--muted);
   font-size: 13px;
+  padding-top: 15px;
 }
 
 .toc-inner ol {

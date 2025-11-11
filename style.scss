@@ -233,6 +233,7 @@ footer .small { color: var(--muted); font-size: 13px; }
 
 /* ------------------ Utilities ------------------ */
 .muted { color: var(--muted); }
+.muted-2 { color:#706c46}
 .pill { padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,0.02); font-size: 13px; color: white; }
 
 /* ------------------ Responsive ------------------ */
@@ -495,7 +496,7 @@ footer .small { color: var(--muted); font-size: 13px; }
   border: 1px solid rgba(255,255,255,0.03);
   box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
-.toc-title { font-weight:700; margin-bottom:8px; color:var(--muted); font-size:13px; }
+.toc-title { font-weight:700; margin-bottom:8px; color:var(--muted); font-size:13px; padding-top: 15px;}
 
 .toc-inner ol { margin: 0; padding-left: 16px; font-size: 14px; color: var(--muted); }
 .toc-inner ol li { margin-bottom: 6px; }
