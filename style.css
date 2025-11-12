@@ -740,4 +740,39 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
   }
+}
+/* === Restore Apple-style Sticky Header (fixed glass look) === */
+.header {
+  position: fixed; /* Make it truly float over content */
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%; /* Keeps centered, responsive */
+  z-index: 999;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background: rgba(20, 22, 25, 0.02); /* translucent background */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  transition: background 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+}
+
+/* Add top spacing so content doesn’t hide under header */
+body {
+  padding-top: 90px; /* adjust if your header height changes */
+}
+
+/* Mobile fine-tune */
+@media (max-width: 760px) {
+  .header {
+    top: 8px;
+    width: calc(100% - 12px);
+    border-radius: 12px;
+  }
+  body {
+    padding-top: 80px;
+  }
 }/*# sourceMappingURL=style.css.map */
