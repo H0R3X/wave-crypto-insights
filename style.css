@@ -723,4 +723,21 @@ footer .small {
 /* ensure academy content images (diagram placeholders) are clickable for your image viewer */
 .diagram-placeholder.viewable-img {
   cursor: pointer;
+}
+
+/* === Horizontal Scroll Fix (Desktop Safe) === */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling globally */
+}
+
+/* Only force full-width containers on small screens */
+@media (max-width: 760px) {
+  body {
+    padding: 0 8px; /* snug mobile padding */
+  }
+  .site, .header, footer, .sidebar, .toc-floating {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }/*# sourceMappingURL=style.css.map */

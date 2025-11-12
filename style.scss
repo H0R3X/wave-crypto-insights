@@ -199,6 +199,7 @@ img { max-width: 100%; height: auto; display: block; }
   flex-direction: column;
   gap: 12px;
   min-height: 140px;
+  
 }
 .card .kicker { font-size: 12px; color: var(--muted); text-transform: uppercase; }
 .card h3 { margin: 0; font-size: 18px; }
@@ -520,3 +521,26 @@ footer .small { color: var(--muted); font-size: 13px; }
 
 /* ensure academy content images (diagram placeholders) are clickable for your image viewer */
 .diagram-placeholder.viewable-img { cursor:pointer; }
+
+
+
+
+/* === Horizontal Scroll Fix (Desktop Safe) === */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling globally */
+}
+
+/* Only force full-width containers on small screens */
+@media (max-width: 760px) {
+  body {
+    padding: 0 8px; /* snug mobile padding */
+  }
+
+  .site, .header, footer, .sidebar, .toc-floating {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+
