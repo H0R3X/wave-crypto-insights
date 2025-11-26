@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="../style.css">
   <title>Tools — Wave Crypto Insights</title>
-  <meta name="description" content="Trading tools: position size, risk, Fibonacci helpers (coming soon).">
+  <meta name="description" content="Professional crypto trading tools for risk management, leverage calculations, and more.">
 </head>
+
 <body>
+
+  <!-- Header -->
   <header class="header">
     <div class="brand">
       <div class="logo"><img src="../assets/main-logo.png" alt="main logo"></div>
@@ -22,8 +25,7 @@
       <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
       <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
-      <!-- <a href="../news/news.html">News</a> -->
-      <a href="../tools/tools.html">Tools</a>
+      <a href="../tools/tools.html" class="active">Tools</a>
     </nav>
 
     <button class="burger" aria-label="Open menu">
@@ -31,42 +33,73 @@
     </button>
   </header>
 
+  <!-- Mobile Menu -->
   <div class="mobile-menu-overlay" id="mobileMenu">
     <nav class="mobile-menu-links">
       <a href="../index.html">Home</a>
       <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
       <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
-      <!-- <a href="../news/news.html">News</a> -->
-      <a href="../tools/tools.html">Tools</a>
+      <a href="../tools/tools.html" class="active">Tools</a>
     </nav>
   </div>
 
   <div class="site">
+
     <main class="main-column">
       <section>
-        <h2 style="margin:0 0 8px 0">Tools</h2>
-        <div class="card">
-          <h3>Position Size Calculator (coming soon)</h3>
-          <p class="muted">We'll add interactive tools here. Coming soon!</p>
+        <h2 style="margin:0 0 4px 0;">Tools</h2>
+        <p class="muted" style="margin-top:0;">Practical tools for risk management, leverage modeling, and trade planning.</p>
+
+        <!-- Tools Grid -->
+        <div class="post-grid" style="margin-top:16px;">
+
+          <!-- Tool 1 -->
+          <article class="card clickable-card" style="min-height:160px;">
+            <h3>Crypto Risk Leverage Calculator</h3>
+            <p class="muted">Two-mode calculator for leveraged futures trading: fixed leverage & fixed margin.</p>
+            <div style="margin-top:auto;">
+              <a class="btn-small" href="../tools/leverage-calculator.html">Open Tool</a>
+            </div>
+          </article>
+
+          <!-- Tool 2 -->
+          <article class="card clickable-card" style="min-height:160px;">
+            <h3>Position Size Calculator</h3>
+            <p class="muted">Coming soon — calculate exact position size based on risk % and stop loss.</p>
+            <div style="margin-top:auto;">
+              <a class="btn-small" style="opacity:0.5; pointer-events:none;">Coming Soon</a>
+            </div>
+          </article>
+
+          <!-- Tool 3 Future -->
+          <article class="card clickable-card" style="min-height:160px;">
+            <h3>Fibonacci Helper Tool</h3>
+            <p class="muted">Automatically generate 0.382 / 0.5 / 0.618 pullbacks & Wave targets. Coming soon.</p>
+            <div style="margin-top:auto;">
+              <a class="btn-small" style="opacity:0.5; pointer-events:none;">Coming Soon</a>
+            </div>
+          </article>
+
         </div>
       </section>
     </main>
 
     <aside class="sidebar">
-      <div class="ad-slot"></div>
+      <div class="ad-slot">Sponsored space</div>
     </aside>
 
     <footer>
       <div class="small">© Wave Crypto Insights</div>
       <div style="display:flex;gap:12px;align-items:center">
-        <a class="muted" href="/about/about.html">About</a>
-        <a class="muted" href="/contact/contact.html">Contact</a>
-        <a class="muted" href="/privacy/privacy.html">Privacy Policy</a>
-        <a class="muted" href="/terms/terms.html">Terms of Use</a>
-        <a class="muted" href="/disclaimer/financial-disclaimer.html">Disclaimer</a>
+        <a class="muted" href="../about/about.html">About</a>
+        <a class="muted" href="../contact/contact.html">Contact</a>
+        <a class="muted" href="../privacy/privacy.html">Privacy Policy</a>
+        <a class="muted" href="../terms/terms.html">Terms of Use</a>
+        <a class="muted" href="../disclaimer/financial-disclaimer.html">Disclaimer</a>
       </div>
     </footer>
+
   </div>
 
   <script src="../app.js"></script>

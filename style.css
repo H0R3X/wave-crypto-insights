@@ -764,7 +764,7 @@ footer .small {
 
 /* ensure academy content images (diagram placeholders) are clickable for your image viewer */
 .diagram-placeholder.viewable-img {
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 /* === Horizontal Scroll Fix (Desktop Safe) === */
@@ -816,5 +816,680 @@ body {
   }
   body {
     padding-top: 80px;
+  }
+}
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.project-card .tag {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-right: 6px;
+  color: var(--text);
+}
+
+.btn-small {
+  align-self: start;
+  background: var(--gold);
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+  background: #e6c86d;
+}
+
+.project-card .tags {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.project-card .btn-small {
+  margin-top: 6px;
+}
+
+/* === Fix: Keep button at bottom even if tags wrap === */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-footer {
+  margin-top: auto; /* pushes footer to bottom */
+  padding-top: 6px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.project-card .tags {
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+/* Category Tag Colors */
+.tag-layer1 {
+  background: rgba(66, 135, 245, 0.25);
+}
+
+.tag-defi {
+  background: rgba(255, 187, 0, 0.25);
+}
+
+.tag-ai {
+  background: rgba(0, 255, 170, 0.25);
+}
+
+.tag-gaming {
+  background: rgba(255, 0, 200, 0.25);
+}
+
+.tag-rwa {
+  background: rgba(255, 90, 90, 0.25);
+}
+
+.tag-infrastructure {
+  background: rgba(130, 90, 255, 0.25);
+}
+
+/* === Projects — enhancements (append to style.scss) === */
+/* price & meta */
+.price-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.price-value {
+  font-weight: 700;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.price-change {
+  font-size: 12px;
+}
+
+.price-change.up {
+  color: var(--green);
+}
+
+.price-change.down {
+  color: var(--red);
+}
+
+/* score bar */
+.score-block {
+  min-width: 110px;
+}
+
+.score-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.score-bar {
+  width: 110px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  width: 0%;
+  transition: width 350ms ease;
+}
+
+/* tokenomics preview */
+.tokenomics-preview .tok-row {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tok-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.tok-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(214, 178, 74, 0.95), rgba(59, 208, 122, 0.85));
+  transition: width 350ms ease;
+}
+
+/* compact meta row layout on mobile */
+@media (max-width: 760px) {
+  .meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .score-block {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+/* category tag colors (already in your file, but included here for completeness) */
+.tag-layer1 {
+  background: rgba(66, 135, 245, 0.15);
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.tag-defi {
+  background: rgba(255, 187, 0, 0.12);
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.tag-ai {
+  background: rgba(0, 255, 170, 0.12);
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.tag-gaming {
+  background: rgba(255, 0, 200, 0.1);
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.tag-rwa {
+  background: rgba(255, 90, 90, 0.1);
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.tag-infrastructure {
+  background: rgba(130, 90, 255, 0.1);
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+/* small utilities */
+.small {
+  font-size: 12px;
+}
+
+.project-desc {
+  min-height: 40px;
+} /* keeps cards visually consistent */
+/* -----------------------------------------
+   PROJECT CARDS — LAYOUT + AESTHETICS
+----------------------------------------- */
+.project-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+/* The new card-body + card-footer system */
+.project-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer stays at bottom */
+.project-card .card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Clean logo presentation */
+.project-card .coin-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* -----------------------------------------
+   TITLES & TEXT
+----------------------------------------- */
+.project-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.project-card h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+.project-card h3 a:hover {
+  color: var(--gold);
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 8px;
+  line-height: 1.45;
+  /* Two-line clamp so card heights stay stable */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* -----------------------------------------
+   TAGS (Category Badges)
+----------------------------------------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e7e7e7;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Optional automatic category-based color tone */
+.tag-layer1 {
+  background: rgba(0, 127, 255, 0.15);
+}
+
+.tag-defi {
+  background: rgba(0, 255, 163, 0.15);
+}
+
+.tag-ai {
+  background: rgba(255, 147, 0, 0.18);
+}
+
+.tag-infrastructure {
+  background: rgba(255, 0, 191, 0.18);
+}
+
+/* -----------------------------------------
+   TOKENOMICS PREVIEW BAR
+----------------------------------------- */
+.tokenomics-preview .tok-bar {
+  background: rgba(255, 255, 255, 0.05);
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.tokenomics-preview .tok-fill {
+  background: linear-gradient(90deg, #afff00, #9e770d);
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+/* -----------------------------------------
+   GRID FIXES (consistent height system)
+----------------------------------------- */
+#projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+/* -----------------------------------------
+   BUTTON FIXES
+----------------------------------------- */
+.btn-small {
+  padding: 7px 16px;
+  font-size: 0.85rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  transition: all 0.2s;
+}
+.btn-small:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+/* -----------------------------------------
+   MOBILE IMPROVEMENTS
+----------------------------------------- */
+@media (max-width: 480px) {
+  .project-card {
+    padding: 16px;
+    min-height: 330px;
+  }
+  .coin-logo {
+    width: 48px;
+    height: 48px;
+  }
+  .tags {
+    gap: 4px;
+  }
+  .btn-small {
+    padding: 6px 14px;
+  }
+}
+/* === Leverage Calculator === */
+.calculator-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 22px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.tab.active {
+  background: var(--gold);
+  color: #000;
+  font-weight: 700;
+}
+
+.mode-panel {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mode-panel.active {
+  display: flex;
+}
+
+.calculator-card input {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  border-radius: 8px;
+}
+
+.calc-result {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ---------------------------
+   Leverage Calculator styles
+   --------------------------- */
+.calculator-card {
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Shared inputs horizontal bar */
+.shared-inputs-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+  margin: 12px 0 18px 0;
+}
+
+.shared-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.field-desc {
+  margin-top: 2px;
+  color: var(--muted);
+}
+
+.field-error {
+  color: var(--red);
+  font-size: 13px;
+  min-height: 18px;
+}
+
+/* risk slider row */
+.risk-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.risk-row input[type=range] {
+  width: 100%;
+  accent-color: var(--gold);
+}
+
+.risk-value {
+  min-width: 48px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Mode tabs */
+.mode-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0 12px 0;
+}
+
+.mode-tabs .tab {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.mode-tabs .tab.active {
+  background: linear-gradient(180deg, rgba(214, 178, 74, 0.95), rgba(214, 178, 74, 0.15));
+  color: #000;
+  font-weight: 700;
+  border-color: rgba(214, 178, 74, 0.8);
+}
+
+/* Panels */
+.mode-panels {
+  margin-top: 6px;
+}
+
+.mode-panel {
+  display: none;
+  padding-top: 8px;
+}
+
+.mode-panel.active {
+  display: block;
+}
+
+.mode-panel label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+.mode-panel input[type=number] {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+}
+
+/* panel action buttons row */
+.panel-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.btn-small.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Results: card-like highlight with gold border */
+.calc-result {
+  margin-top: 14px;
+}
+
+.result-card {
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.12));
+  border: 2px solid rgba(214, 178, 74, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.result-card h4 {
+  margin: 0 0 8px 0;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  align-items: center;
+  color: var(--muted);
+}
+
+.result-row .muted {
+  color: var(--muted);
+}
+
+.result-row.highlight {
+  border-top: 1px dashed rgba(255, 255, 255, 0.04);
+  padding-top: 10px;
+  margin-top: 6px;
+  color: var(--text);
+}
+
+.result-row.highlight strong {
+  color: #000;
+  background: var(--gold);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* glossary */
+.calc-glossary {
+  margin-top: 12px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.03);
+  padding-top: 10px;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .shared-inputs-bar {
+    grid-template-columns: 1fr;
+  }
+  .result-row {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=style.css.map */

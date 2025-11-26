@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="../style.css">
   <title>Top Crypto Projects — Wave Crypto Insights</title>
-  <meta name="description" content="Reviews and writeups on promising crypto projects.">
+  <meta name="description" content="Discover curated crypto projects chosen for future potential — Elliott Wave + fundamentals. Not financial advice.">
+  <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
+  <!-- Header -->
   <header class="header">
     <div class="brand">
-      <div class="logo"><img src="../assets/main-logo.png" alt="main logo"></div>
+      <div class="logo"><img src="../assets/main-logo.png" alt="Wave Crypto Insights logo" /></div>
       <div>
         <div class="site-title">Wave Crypto Insights</div>
-        <div class="site-sub">Elliott Wave analysis • Crypto Insights</div>
+        <div class="site-sub">Elliott Wave Analysis • Crypto Insights</div>
       </div>
     </div>
 
@@ -21,8 +23,7 @@
       <a href="../index.html">Home</a>
       <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
-      <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
-      <!-- <a href="../news/news.html">News</a> -->
+      <a href="../top-crypto-projects/projects.html" class="active">Top Crypto Projects</a>
       <a href="../tools/tools.html">Tools</a>
     </nav>
 
@@ -31,49 +32,71 @@
     </button>
   </header>
 
+  <!-- Mobile Menu -->
   <div class="mobile-menu-overlay" id="mobileMenu">
     <nav class="mobile-menu-links">
       <a href="../index.html">Home</a>
       <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
-      <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
-      <!-- <a href="../news/news.html">News</a> -->
+      <a href="../top-crypto-projects/projects.html" class="active">Top Crypto Projects</a>
       <a href="../tools/tools.html">Tools</a>
     </nav>
   </div>
 
   <div class="site">
     <main class="main-column">
-      <section>
-        <h2 style="margin:0 0 8px 0">Top Crypto Projects</h2>
-        <div class="post-grid" id="projects-grid">
-          <article class="card">
-            <div class="kicker">Project Review</div>
-            <h3>Project Alpha — Quick overview</h3>
-            <p class="muted">Short summary and why we’re watching it.</p>
-          </article>
 
-          <!-- Add more project cards or inject via JSON -->
-        </div>
+      <!-- Hero Section -->
+      <section class="hero-section" style="text-align:center; margin-bottom:24px;">
+        <h1 style="margin-bottom:8px;">Top Crypto Projects</h1>
+        <p class="muted" style="max-width:600px; margin:0 auto;">
+          Curated projects that, in our view, show short- or long-term potential based on Elliott Wave analysis and fundamentals. This is educational content, not financial advice.
+        </p>
       </section>
+
+      <!-- Search & Filter -->
+      <section class="search-filter-bar" style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-bottom:20px;">
+        <input type="text" id="searchProject" placeholder="Search by name, symbol or tag..." 
+               style="padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.06); color:var(--text); min-width:260px;">
+        <select id="categoryFilter" 
+                style="padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.06); color:rgb(102, 100, 100);">
+          <option value="">All Categories</option>
+          <option value="Layer 1">Layer 1</option>
+          <option value="DeFi">DeFi</option>
+          <option value="AI">AI</option>
+          <option value="Gaming">Gaming</option>
+          <option value="RWA">RWA</option>
+          <option value="Infrastructure">Infrastructure</option>
+        </select>
+      </section>
+
+      <!-- Projects Grid (auto-generated) -->
+      <section id="projects-grid" class="projects-grid" 
+         style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;">
+      </section>
+
+      <!-- Pagination -->
+      <div id="pagination" class="pagination" style="margin-top:24px;"></div>
+
     </main>
 
     <aside class="sidebar">
-      <div class="ad-slot"></div>
+      <div class="ad-slot">Sponsored section</div>
     </aside>
 
     <footer>
       <div class="small">© Wave Crypto Insights</div>
       <div style="display:flex;gap:12px;align-items:center">
-        <a class="muted" href="/about/about.html">About</a>
-        <a class="muted" href="/contact/contact.html">Contact</a>
-        <a class="muted" href="/privacy/privacy.html">Privacy Policy</a>
-        <a class="muted" href="/terms/terms.html">Terms of Use</a>
-        <a class="muted" href="/disclaimer/financial-disclaimer.html">Disclaimer</a>
+        <a class="muted" href="../about/about.html">About</a>
+        <a class="muted" href="../contact/contact.html">Contact</a>
+        <a class="muted" href="../privacy/privacy.html">Privacy Policy</a>
+        <a class="muted" href="../terms/terms.html">Terms of Use</a>
+        <a class="muted" href="../disclaimer/financial-disclaimer.html">Disclaimer</a>
       </div>
     </footer>
   </div>
 
   <script src="../app.js"></script>
+  <script src="./projects.js"></script>
 </body>
 </html>

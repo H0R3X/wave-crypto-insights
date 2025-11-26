@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "name": "Solana",
+    "symbol": "SOL",
+    "slug": "solana",
+    "page": "./solana.html",
+    "description": "High-speed Layer 1 blockchain optimized for scalability and low-cost transactions.",
+    "logo": "../assets/coins/sol.svg",
+    "categories": ["Layer 1", "DeFi"],
+    "marketCap": 35000000000,
+    "status": "published",
+    "updated": "2025-01-01",
+    "tags": ["scalability", "performance", "dapps"],
+    "tokenomics": {
+      "circulating": 400000000,
+      "total": 489000000,
+      "fdv": null,
+      "volume": null
+    },
+    "outlook": "Neutral — looking for impulse confirmation",
+    "wave": "Wave analysis description here (summary).",
+    "fundamentals": {
+      "title": "High throughput & low fees",
+      "description": "Solana provides fast block times and extremely low gas fees, suitable for high-throughput dApps."
+    },
+    "team": ["Anatoly Yakovenko (Founder)"],
+    "diagram": "../assets/posts/solana-wave.png",
+    "diagramAlt": "Solana Elliott Wave Chart"
+  },
+  {
+    "name": "Aave",
+    "symbol": "AAVE",
+    "slug": "aave",
+    "page": "./aave.html",
+    "description": "Decentralized liquidity protocol enabling lending and borrowing without intermediaries.",
+    "logo": "../assets/projects/aave-logo.png",
+    "categories": ["DeFi"],
+    "marketCap": 1200000000,
+    "status": "published",
+    "updated": "2025-01-05",
+    "tags": ["lending", "borrowing", "defi"],
+    "tokenomics": {
+      "circulating": 12000000,
+      "total": 16000000,
+      "fdv": null,
+      "volume": null
+    },
+    "outlook": "Bullish — strong fundamentals",
+    "wave": "Aave wave summary here.",
+    "fundamentals": {
+      "title": "Lending protocol",
+      "description": "Aave is a leading DeFi lending market with strong product adoption."
+    },
+    "team": ["Stani Kulechov (Founder)"],
+    "diagram": "../assets/posts/aave-wave.png",
+    "diagramAlt": "Aave Elliott Wave Chart"
+  },
+  {
+    "name": "Fetch.ai",
+    "symbol": "FET",
+    "slug": "fet",
+    "page": "./fet.html",
+    "description": "AI-powered network for autonomous agents, connecting real-world data to smart contracts.",
+    "logo": "../assets/coins/fet.svg",
+    "categories": ["AI", "Infrastructure"],
+    "marketCap": 2300000000,
+    "status": "published",
+    "updated": "2025-01-07",
+    "tags": ["ai", "agents", "automation"],
+    "tokenomics": {
+      "circulating": 182000000,
+      "total": 1000000000,
+      "fdv": null,
+      "volume": null
+    },
+    "outlook": "Speculative long-term",
+    "wave": "Fetch.ai wave summary here.",
+    "fundamentals": {
+      "title": "Autonomous agent infrastructure",
+      "description": "Fetch.ai focuses on machine learning and autonomous economic agents."
+    },
+    "team": ["TBA"],
+    "diagram": "../assets/posts/fet-wave.png",
+    "diagramAlt": "Fetch.ai Elliott Wave Chart"
+  }
+]
