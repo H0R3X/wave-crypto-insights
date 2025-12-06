@@ -21,13 +21,24 @@
 * { box-sizing: border-box; }
 
 /* ✅ Static gradient background (performance friendly) */
+//OLDGOLD//
+// html {
+//   min-height: 100%;
+//   background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%);
+//   background-attachment: fixed;
+//   background-repeat: no-repeat;
+//   background-color: #08090b;
+// }
+
 html {
   min-height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%);
+  // background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%); //OldGold
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #3f076d87 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: #08090b;
+  background-color: #4e0986e0;
 }
+
 
 
 body {
@@ -157,7 +168,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero-card {
   // background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  background: linear-gradient(180deg, rgba(223, 191, 22, 0.24), rgba(255, 255, 255, 0.01));
+  // background: linear-gradient(180deg, rgba(223, 191, 22, 0.24), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(180deg, rgba(86, 31, 237, 0.57), rgba(3, 14, 14, 0.75));
   padding: 20px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.03);
@@ -1086,4 +1098,200 @@ body {
 @media (max-width: 900px) {
   .shared-inputs-bar { grid-template-columns: 1fr; }
   .result-row { font-size: 14px; }
+}
+
+
+
+
+/* -----------------------------------------
+   Crypto Converter — Unified Styles (Sparkline + Suggestions)
+----------------------------------------- */
+
+/* container grid for converter */
+.calculator-card .converter-grid { display:flex; flex-direction:column; gap:12px; }
+
+/* Shared inputs bar (responsive) */
+.shared-inputs-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 220px;
+  gap: 12px;
+  align-items: start;
+}
+.shared-field { display:flex; flex-direction:column; gap:6px; position:relative; }
+.field-label { font-weight:700; font-size:13px; color:var(--text); }
+.field-desc { margin-top:2px; color: var(--muted); font-size:13px; }
+.field-error { color: var(--red); font-size:13px; min-height:18px; }
+
+/* Inputs */
+.calculator-card input[type="number"],
+.calculator-card input[type="text"],
+.calculator-card select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  box-shadow: none;
+}
+
+/* result card */
+.result-card {
+  margin-top: 8px;
+  border-radius: 12px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.12));
+  border: 2px solid rgba(214,178,74,0.12);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+}
+.result-card h3 { margin:0 0 8px 0; color:var(--text); }
+.result-row { display:flex; justify-content:space-between; gap:12px; align-items:center; color:var(--muted); padding:6px 0; }
+.result-row.highlight { margin-top:8px; color:var(--text); border-top:1px dashed rgba(255,255,255,0.04); padding-top:10px; }
+.result-row strong { color:#000; background:var(--gold); padding:4px 8px; border-radius:6px; }
+
+/* glossary */
+.calc-glossary { margin-top:12px; border-top:1px dashed rgba(255,255,255,0.03); padding-top:10px; color:var(--muted); }
+
+/* small screens */
+@media (max-width:900px) {
+  .shared-inputs-bar { grid-template-columns: 1fr; }
+  .result-row { font-size: 14px; flex-direction:column; align-items:flex-start; gap:6px; }
+}
+
+/* -----------------------------------------
+   Converter UI (suggestions + swap + results)
+----------------------------------------- */
+
+/* suggestions list (rich items with icon + symbol + name + price) */
+.suggestions {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(15,15,15,0.98), rgba(12,12,12,0.96));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  padding: 6px;
+  z-index: 2200;
+  max-height: 340px;
+  overflow: auto;
+}
+
+/* suggestion item */
+.suggestion-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 160ms ease, transform 120ms ease;
+  color: var(--text);
+}
+.suggestion-item:hover,
+.suggestion-item.highlight {
+  background: rgba(214,178,74,0.06);
+  transform: translateY(-2px);
+}
+
+/* left (icon) */
+.suggestion-item .s-left img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* mid (symbol + name) */
+.suggestion-item .s-mid {
+  display:flex;
+  flex-direction:column;
+  min-width: 0;
+}
+.suggestion-item .s-symbol {
+  font-weight:700;
+  font-size:13px;
+  color: var(--text);
+}
+.suggestion-item .s-name {
+  font-size:12px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
+
+/* right (price) */
+.suggestion-item .s-right {
+  margin-left: auto;
+  font-weight:600;
+  font-family: monospace;
+  font-size:13px;
+  color: var(--muted);
+}
+
+/* empty state */
+.suggestion-empty {
+  padding: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* swap button small style */
+#swapBtn {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(214,178,74,0.95), rgba(214,178,74,0.2));
+  color: #000;
+  font-weight:700;
+  border: 1px solid rgba(214,178,74,0.5);
+  cursor: pointer;
+}
+#swapBtn:hover { transform: translateY(-2px); }
+
+/* Mode buttons */
+.mode-btn { padding:8px 10px; border-radius: 10px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color:var(--muted); cursor:pointer; }
+.mode-btn.active { background: linear-gradient(180deg, rgba(214,178,74,0.95), rgba(214,178,74,0.16)); color:#000; font-weight:700; border-color: rgba(214,178,74,0.8); }
+
+/* responsive behaviour tweaks */
+@media (max-width: 900px) {
+  .shared-inputs-bar { grid-template-columns: 1fr; }
+  .suggestions { max-height: 260px; }
+  .suggestion-item .s-name { max-width: 160px; }
+}
+
+/* -----------------------------------------
+   Sparkline styles (under Converted Value)
+----------------------------------------- */
+
+.sparkline-wrapper {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 6px;
+  background: rgba(255,255,255,0.02);
+  padding: 6px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* make svg fit nicely */
+.sparkline-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 64px;
+}
+
+/* add subtle hover glow */
+.sparkline-wrapper:hover {
+  box-shadow: 0 6px 20px rgba(214,178,74,0.06);
+}
+
+/* mobile tweak */
+@media (max-width: 480px) {
+  .sparkline-wrapper svg { height: 48px; }
+  .suggestion-item .s-right { font-size: 12px; }
 }

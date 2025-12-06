@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Multi-Coin Converter — Live Crypto → USD | Wave Crypto Insights</title>
+  <meta name="description" content="Instant, live crypto ⇄ USD converter for 100+ coins. Type a coin symbol or name, pick from rich suggestions (icons), and see USD value update as you type. Powered by CoinGecko.">
+  <meta name="keywords" content="crypto converter, bitcoin to usd, coin to usd, crypto price converter, coin gecko, btc to usd, crypto tools">
+  <link rel="canonical" href="https://www.wavecryptoinsights.com/tools/crypto-converter.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Multi-Coin Converter — Live Crypto → USD | Wave Crypto Insights" />
+  <meta property="og:description" content="Instant, live crypto ⇄ USD converter for 100+ coins. Type symbol or name, pick from suggestions and get live USD value. Free and privacy friendly." />
+  <meta property="og:url" content="https://www.wavecryptoinsights.com/tools/crypto-converter.html" />
+  <meta property="og:site_name" content="Wave Crypto Insights" />
+  <meta property="og:image" content="https://www.wavecryptoinsights.com/assets/converter-og.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Multi-Coin Converter — Live Crypto → USD" />
+  <meta name="twitter:description" content="Instant, live crypto ⇄ USD converter for 100+ coins. Type a coin symbol or name, pick from suggestions and get live USD value." />
+  <meta name="twitter:image" content="https://www.wavecryptoinsights.com/assets/converter-og.png" />
+
+  <!-- Structured data (WebPage + Tool) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Multi-Coin Converter — Wave Crypto Insights",
+    "url": "https://www.wavecryptoinsights.com/tools/crypto-converter.html",
+    "description": "Instant, live crypto ⇄ USD converter for 100+ coins. Type symbol or name, choose suggestion, and get live USD value. Free tool for traders.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wave Crypto Insights",
+      "url": "https://www.wavecryptoinsights.com"
+    },
+    "mainEntity": {
+      "@type": "WebAPI",
+      "name": "Crypto Converter Tool",
+      "description": "Convert coin amounts to USD and USD to coin amount using live prices from CoinGecko.",
+      "documentation": "https://www.coingecko.com/en/api"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">
+      <div class="logo"><img src="../assets/main-logo.png" alt="Wave Crypto Insights logo"></div>
+      <div>
+        <div class="site-title">Wave Crypto Insights</div>
+        <div class="site-sub">Elliott Wave Analysis • Crypto Insights</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
+      <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="../tools/tools.html" class="active">Tools</a>
+    </nav>
+
+    <button class="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu-links">
+      <a href="../index.html">Home</a>
+      <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
+      <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
+      <a href="../tools/tools.html">Tools</a>
+    </nav>
+  </div>
+
+  <div class="site" role="main">
+    <main class="main-column">
+      <h1>Multi-Coin Converter — Crypto ⇄ USD (Live)</h1>
+      <p class="muted">Type a coin symbol or name (e.g. <strong>BTC</strong> or <strong>bitcoin</strong>). Suggestions are rich (icons + symbol + name + price) and sorted alphabetically by symbol. Prices via CoinGecko. Results update instantly.</p>
+
+      <section class="card calculator-card" aria-labelledby="converterTitle">
+        <h2 id="converterTitle" style="margin:0 0 6px 0;">Converter</h2>
+
+        <div class="converter-grid">
+
+          <!-- Shared top inputs -->
+          <div class="shared-inputs-bar">
+            <div class="shared-field">
+              <label class="field-label" for="amountInput">Amount</label>
+              <input id="amountInput" type="number" min="0" step="any" placeholder="e.g. 0.25" aria-describedby="amountDesc" />
+              <div id="amountDesc" class="field-desc">Enter the quantity you have (coin units) or USD depending on mode.</div>
+            </div>
+
+            <div class="shared-field" style="position:relative;">
+              <label class="field-label" for="coinSearch">Coin (type to search)</label>
+              <div style="display:flex; gap:8px; align-items:center;">
+                <input id="coinSearch" type="text" inputmode="search" autocomplete="off" placeholder="Type symbol or name (e.g. BTC or bitcoin)" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" />
+                <button id="swapBtn" class="btn-small" aria-label="Swap direction">⇄</button>
+              </div>
+              <div id="suggestions" role="listbox" aria-label="Coin suggestions" class="suggestions" hidden></div>
+              <div class="field-desc">Manual search only — suggestions appear as you type. Click or press Enter to select.</div>
+            </div>
+
+            <div class="shared-field">
+              <label class="field-label">Mode</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <button id="modeCoinToUsd" class="btn-small mode-btn active" aria-pressed="true">Coin → USD</button>
+                <button id="modeUsdToCoin" class="btn-small mode-btn" aria-pressed="false">USD → Coin</button>
+              </div>
+              <div class="field-desc">Toggle conversion direction or use the swap button.</div>
+            </div>
+          </div>
+
+          <!-- Result card -->
+          <div id="resultWrap" class="result-card" aria-live="polite">
+            <h3 style="margin:0 0 8px 0;">Converted Value</h3>
+
+            <div class="result-row" id="resultLine">
+              <div class="muted" id="resultLeft">—</div>
+              <div class="muted" id="resultRight">—</div>
+            </div>
+
+            <div class="result-row highlight" id="highlightRow" style="display:none;">
+              <div class="muted">Value</div>
+              <strong id="usdResult">—</strong>
+            </div>
+
+            <!-- SPARKLINE (A: Under Converted Value) -->
+            <div id="sparklineWrap" style="margin-top:12px;"></div>
+
+            <div style="margin-top:10px;" id="calcSteps" class="muted small" aria-hidden="false"></div>
+
+            <div class="calc-glossary" style="margin-top:12px;">
+              <strong>Glossary</strong>
+              <div class="muted small" style="margin-top:8px;">
+                <div><strong>Amount:</strong> units of the coin (or USD when using USD → Coin).</div>
+                <div><strong>Price (USD):</strong> latest price of 1 unit of the selected coin in USD.</div>
+                <div><strong>Result:</strong> computed live as Amount × Price (or Amount ÷ Price).</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <p class="muted small" style="margin-top:12px;">Prices powered by CoinGecko's public API. This tool is for convenience and educational use only — not financial advice.</p>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot">Sponsored space</div>
+    </aside>
+
+    <footer>
+      <div class="small">© Wave Crypto Insights</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="muted" href="../about/about.html">About</a>
+        <a class="muted" href="../contact/contact.html">Contact</a>
+        <a class="muted" href="../privacy/privacy.html">Privacy Policy</a>
+        <a class="muted" href="../terms/terms.html">Terms of Use</a>
+        <a class="muted" href="../disclaimer/financial-disclaimer.html">Disclaimer</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../app.js"></script>
+  <script src="./crypto-converter.js"></script>
+</body>
+</html>
