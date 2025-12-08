@@ -6,7 +6,7 @@
   --panel: #0f1113; /* cards / panels */
   --muted: #9aa3ad; /* secondary text */
   --text: #e6eef3; /* primary text */
-  --gold: #d6b24a; /* gold accent */
+  --gold: #27a8b5; /* gold accent */
   --green: #3bd07a; /* up color */
   --red: #ff6b6b; /* down color */
   --glass: rgba(255,255,255,0.02);
@@ -33,10 +33,10 @@
 html {
   min-height: 100%;
   // background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%); //OldGold
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #3f076d87 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #1a496096 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: #4e0986e0;
+  background-color: #281bdde0;
 }
 
 
@@ -169,7 +169,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-card {
   // background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   // background: linear-gradient(180deg, rgba(223, 191, 22, 0.24), rgba(255, 255, 255, 0.01));
-  background: linear-gradient(180deg, rgba(86, 31, 237, 0.57), rgba(3, 14, 14, 0.75));
+  background: linear-gradient(180deg, rgba(19, 72, 154, 0.57), rgba(1, 3, 3, 0.75));
   padding: 20px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.03);
@@ -228,7 +228,7 @@ img { max-width: 100%; height: auto; display: block; }
 .popular {
   padding: 14px; border-radius: 12px;
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-  border: 1px solid rgba(255,255,255,0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .popular li { margin: 8px 0; }
 
@@ -246,7 +246,7 @@ footer .small { color: var(--muted); font-size: 13px; }
 
 /* ------------------ Utilities ------------------ */
 .muted { color: var(--muted); }
-.muted-2 { color:#706c46}
+.muted-2 { color:#27a8b5}
 .pill { padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,0.02); font-size: 13px; color: white; }
 
 /* ------------------ Responsive ------------------ */
@@ -1059,10 +1059,10 @@ body {
   cursor: pointer;
 }
 .mode-tabs .tab.active {
-  background: linear-gradient(180deg, rgba(214,178,74,0.95), rgba(214,178,74,0.15));
+  background: linear-gradient(180deg, rgba(6, 150, 255, 0.95), rgba(9, 17, 80, 0.15));
   color: #000;
-  font-weight:700;
-  border-color: rgba(214,178,74,0.8);
+  font-weight: 700;
+  border-color: rgba(214, 214, 214, 0.8);
 }
 
 /* Panels */
@@ -1099,7 +1099,6 @@ body {
   .shared-inputs-bar { grid-template-columns: 1fr; }
   .result-row { font-size: 14px; }
 }
-
 
 
 
@@ -1264,30 +1263,35 @@ body {
 }
 
 /* -----------------------------------------
-   Sparkline styles (under Converted Value)
+   Sparkline styles (clean gold line only)
+----------------------------------------- */
+
+/* -----------------------------------------
+   Sparkline (compact square style)
 ----------------------------------------- */
 
 .sparkline-wrapper {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-top: 6px;
+  width: 200px;        /* fixed compact width */
+  height: 80px;        /* compact height */
+  margin: 10px auto 0 auto;   /* center horizontally */
+  border-radius: 10px;
   background: rgba(255,255,255,0.02);
   padding: 6px;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* make svg fit nicely */
 .sparkline-wrapper svg {
-  display: block;
   width: 100%;
-  height: 64px;
+  height: 100%;
 }
 
-/* add subtle hover glow */
+
+/* minimal hover glow */
 .sparkline-wrapper:hover {
-  box-shadow: 0 6px 20px rgba(214,178,74,0.06);
+  box-shadow: 0 6px 20px rgba(214,178,74,0.04);
 }
 
 /* mobile tweak */

@@ -7,7 +7,7 @@
   --panel: #0f1113; /* cards / panels */
   --muted: #9aa3ad; /* secondary text */
   --text: #e6eef3; /* primary text */
-  --gold: #d6b24a; /* gold accent */
+  --gold: #27a8b5; /* gold accent */
   --green: #3bd07a; /* up color */
   --red: #ff6b6b; /* down color */
   --glass: rgba(255,255,255,0.02);
@@ -26,10 +26,10 @@
 /* ✅ Static gradient background (performance friendly) */
 html {
   min-height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, rgba(63, 7, 109, 0.5294117647) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, rgba(26, 73, 96, 0.5882352941) 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: rgba(78, 9, 134, 0.8784313725);
+  background-color: rgba(40, 27, 221, 0.8784313725);
 }
 
 body {
@@ -195,7 +195,7 @@ img {
 }
 
 .hero-card {
-  background: linear-gradient(180deg, rgba(86, 31, 237, 0.57), rgba(3, 14, 14, 0.75));
+  background: linear-gradient(180deg, rgba(19, 72, 154, 0.57), rgba(1, 3, 3, 0.75));
   padding: 20px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -319,7 +319,7 @@ img {
   padding: 14px;
   border-radius: 12px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .popular li {
@@ -350,7 +350,7 @@ footer .small {
 }
 
 .muted-2 {
-  color: #706c46;
+  color: #27a8b5;
 }
 
 .pill {
@@ -1384,10 +1384,10 @@ body {
 }
 
 .mode-tabs .tab.active {
-  background: linear-gradient(180deg, rgba(214, 178, 74, 0.95), rgba(214, 178, 74, 0.15));
+  background: linear-gradient(180deg, rgba(6, 150, 255, 0.95), rgba(9, 17, 80, 0.15));
   color: #000;
   font-weight: 700;
-  border-color: rgba(214, 178, 74, 0.8);
+  border-color: rgba(214, 214, 214, 0.8);
 }
 
 /* Panels */
@@ -1737,29 +1737,32 @@ body {
   }
 }
 /* -----------------------------------------
-   Sparkline styles (under Converted Value)
+   Sparkline styles (clean gold line only)
+----------------------------------------- */
+/* -----------------------------------------
+   Sparkline (compact square style)
 ----------------------------------------- */
 .sparkline-wrapper {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-top: 6px;
+  width: 200px; /* fixed compact width */
+  height: 80px; /* compact height */
+  margin: 10px auto 0 auto; /* center horizontally */
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.02);
   padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* make svg fit nicely */
 .sparkline-wrapper svg {
-  display: block;
   width: 100%;
-  height: 64px;
+  height: 100%;
 }
 
-/* add subtle hover glow */
+/* minimal hover glow */
 .sparkline-wrapper:hover {
-  box-shadow: 0 6px 20px rgba(214, 178, 74, 0.06);
+  box-shadow: 0 6px 20px rgba(214, 178, 74, 0.04);
 }
 
 /* mobile tweak */
