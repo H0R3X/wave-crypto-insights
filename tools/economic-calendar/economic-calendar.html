@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Economic Calendar — Crypto Events & High-Impact Countdown | Wave Crypto Insights</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Crypto-focused Economic Calendar — high-impact events, glowing countdown to next release, market sessions. Manual JSON-powered (no API)."/>
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Wave Crypto Insights" />
+  <link rel="canonical" href="https://www.wavecryptoinsights.com/tools/economic-calendar/economic-calendar.html" />
+  <meta name="theme-color" content="#070717">
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="./economic-calendar.css">
+</head>
+
+<body class="dark-bg">
+
+<header class="header">
+  <div class="brand">
+    <div class="logo">
+      <img src="/assets/main-logo.png" alt="Wave Crypto Insights logo" />
+    </div>
+    <div>
+      <div class="site-title">Wave Crypto Insights</div>
+      <div class="site-sub">Economic Calendar</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="/index.html">Home</a>
+    <a href="/wave-analysis/wave-analysis.html">Wave Analysis</a>
+    <a href="/elliott-wave-academy/academy.html">Elliott Wave Academy</a>
+    <a href="/top-crypto-projects/projects.html">Top Crypto Projects</a>
+    <a href="/tools/tools.html">Tools</a>
+  </nav>
+</header>
+
+<a class="back-link" href="/tools/tools.html">← Back to tools</a>
+
+<main class="site">
+
+<section class="calendar-hero card">
+  <h1>Economic Calendar — High Impact (Crypto Focus)</h1>
+  <p class="muted">
+    Only <strong>High Impact</strong> events are shown.  
+    Edit <code>/tools/economic-calendar/events.json</code> to manage data.
+  </p>
+
+  <div class="hero-grid">
+
+    <!-- LEFT COLUMN -->
+    <div class="main-column">
+
+      <!-- NEXT EVENT -->
+      <div class="next-event-card">
+        <div class="badge">NEXT</div>
+
+        <h2 id="nextTitle">—</h2>
+        <div id="nextMeta" class="muted small">—</div>
+
+        <div id="countdown" class="countdown glowing">
+          <div class="countdown-row">
+            <div><span id="cdDays">00</span><small>Days</small></div>
+            <div><span id="cdHours">00</span><small>Hours</small></div>
+            <div><span id="cdMins">00</span><small>Minutes</small></div>
+            <div><span id="cdSecs">00</span><small>Seconds</small></div>
+          </div>
+        </div>
+
+        <div class="next-details muted">
+          <div><strong>Forecast:</strong> <span id="nextForecast">—</span></div>
+          <div><strong>Previous:</strong> <span id="nextPrevious">—</span></div>
+          <div id="nextDesc" class="small" style="margin-top:8px"></div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <button id="jumpToFull" class="btn-small">View Upcoming Events</button>
+        </div>
+      </div>
+
+      <!-- HIGH IMPACT EVENTS (STACKED) -->
+      <section class="calendar-list card">
+        <h2 id="listTitle">High Impact Events</h2>
+        <div id="listCount" class="muted small">—</div>
+
+        <div id="eventsContainer" class="events-grid"></div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <aside class="calendar-aside">
+
+      <div class="card">
+        <h3>Time Zone</h3>
+        <select id="timezoneSelect" class="filter-btn">
+          <option value="local">Local Time</option>
+          <option value="UTC">UTC</option>
+          <option value="America/New_York">New York</option>
+          <option value="Europe/London">London</option>
+          <option value="Asia/Tokyo">Tokyo</option>
+          <option value="Australia/Sydney">Sydney</option>
+        </select>
+      </div>
+
+      <div class="session-card card">
+        <h3>Market Sessions</h3>
+        <ul id="sessionsList" class="sessions"></ul>
+      </div>
+
+      <div class="filter-card card">
+        <h3>Filters</h3>
+        <div class="filters">
+          <button class="filter-btn active" data-range="today">Today</button>
+          <button class="filter-btn" data-range="tomorrow">Tomorrow</button>
+          <button class="filter-btn" data-range="this-week">This Week</button>
+          <button class="filter-btn" data-range="next-week">Next Week</button>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+  <footer>
+      <div class="small">© Wave Crypto Insights</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="muted" href="/about/about.html">About</a>
+        <a class="muted" href="/contact/contact.html">Contact</a>
+        <a class="muted" href="/privacy/privacy.html">Privacy Policy</a>
+        <a class="muted" href="/terms/terms.html">Terms of Use</a>
+        <a class="muted" href="/disclaimer/financial-disclaimer.html">Disclaimer</a>
+      </div>
+    </footer>
+
+</main>
+
+
+<script src="./economic-calendar.js" defer></script>
+</body>
+</html>

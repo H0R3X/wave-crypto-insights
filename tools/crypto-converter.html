@@ -6,7 +6,7 @@
 
   <title>Multi-Coin Converter — Live Crypto → USD | Wave Crypto Insights</title>
   <meta name="description" content="Instant, live crypto ⇄ USD converter for the top ~120 coins. Type a coin symbol or name, pick from suggestions (icons), and see USD value update live. Free, fast and accessible." />
-  <meta name="keywords" content="crypto converter, bitcoin to usd, coin to usd, crypto price converter, coingecko, btc to usd, crypto tools, convert btc" />
+  <meta name="keywords" content="crypto converter, bitcoin to usd, coin to usd, crypto price converter, coingecko, cryptocompare, btc to usd, crypto tools, convert btc" />
   <link rel="canonical" href="https://www.wavecryptoinsights.com/tools/crypto-converter.html" />
 
   <!-- Open Graph -->
@@ -20,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Multi-Coin Converter — Live Crypto → USD" />
-  <meta name="twitter:description" content="Instant, live crypto ⇄ USD converter for the top ~120 coins. Type symbol or name, pick from suggestions and see USD value update live." />
+  <meta name="twitter:description" content="Instant, live crypto ⇄ USD converter for the top ~120 coins. Type symbol or name, pick from suggestions and get live USD value." />
   <meta name="twitter:image" content="https://www.wavecryptoinsights.com/assets/converter-og.png" />
 
   <!-- Structured data -->
@@ -71,11 +71,12 @@
     </nav>
   </div>
 
+  <a class="back-link" href="../tools/tools.html" aria-label="Back to tools">← Back to tools</a>
   <div class="site" role="main">
     <main class="main-column">
       <h1>Multi-Coin Converter — Crypto ⇄ USD (Live)</h1>
       <p class="muted">
-        Instant converter for the top ~120 coins. Type a coin symbol (eg. <strong>BTC</strong>) or name (<strong>bitcoin</strong>) — suggestions show icons and prices. Results update live.
+        Instant converter for the top coins. Type a coin symbol (eg. <strong>BTC</strong>) or name (<strong>bitcoin</strong>) — suggestions show icons and prices. Results update live using CryptoCompare for price updates.
       </p>
 
       <section class="card calculator-card" aria-labelledby="converterTitle">
@@ -126,8 +127,8 @@
               <strong id="usdResult">—</strong>
             </div>
 
-            <!-- Sparkline (clean gold line only) -->
-            <div id="sparklineWrap" style="margin-top:12px;" aria-hidden="false"></div>
+            <!-- SYMBOL PULSE animation (replaces chart) -->
+            <div id="pulseWrap" style="margin-top:12px;"></div>
 
             <div style="margin-top:10px;" id="calcSteps" class="muted small"></div>
 
@@ -145,7 +146,7 @@
       </section>
 
       <p class="muted small" style="margin-top:12px;">
-        Prices powered by CoinGecko's public API. Chart data attempts CoinGecko 30-day market_chart, with graceful fallback — see network console for details. This tool is for convenience and educational use only — not financial advice.
+        Prices powered by CryptoCompare (live updates). This tool is for convenience and educational use only — not financial advice.
       </p>
     </main>
 

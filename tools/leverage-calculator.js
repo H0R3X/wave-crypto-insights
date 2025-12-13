@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const riskSlider = document.getElementById("riskSlider");
   const riskValue = document.getElementById("riskValue");
   const stopLossEl = document.getElementById("stopLoss");
+  const riskWarn = document.getElementById("riskWarn");
 
   const walletError = document.getElementById("walletError");
   const slError = document.getElementById("slError");
@@ -61,9 +62,42 @@ document.addEventListener("DOMContentLoaded", () => {
     riskError.textContent = "";
   }
 
-  // Risk slider change -> update label
+  // helper to format risk label nicely (show .0 or .5)
+  function formatRiskLabel(n) {
+    // show one decimal only if .5, otherwise show integer
+    if (Math.abs(n - Math.round(n)) === 0.5) {
+      return `${n.toFixed(1)}%`;
+    }
+    // otherwise if integer show without decimals
+    if (Number.isInteger(n)) return `${n}%`;
+    // else show one decimal
+    return `${n.toFixed(1)}%`;
+  }
+
+  // Risk slider change -> update label + warning UI
+  function updateRiskUI() {
+    const val = Number(riskSlider.value);
+    riskValue.textContent = formatRiskLabel(val);
+
+    // Clear previous state
+    riskValue.classList.remove("risk-high");
+    riskSlider.classList.remove("risk-high");
+    riskWarn.style.display = "none";
+
+    // If above recommended threshold (10%), highlight and warn
+    if (val > 5) {
+      riskValue.classList.add("risk-high");
+      riskSlider.classList.add("risk-high");
+      riskWarn.style.display = "block";
+    }
+  }
+
+  // initialize label
+  updateRiskUI();
+
+  // add event on slider
   riskSlider.addEventListener("input", () => {
-    riskValue.textContent = `${riskSlider.value}%`;
+    updateRiskUI();
   });
 
   // Prevent wallet decimals (user wanted whole numbers only)
@@ -72,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const v = walletEl.value;
     if (!v) return;
     if (v.includes(".")) {
-      // show small error and truncate to integer (do not silently round)
+      // show small error and keep user input (do not silently round)
       walletError.textContent = "Please enter whole dollars only (no decimals).";
     } else {
       walletError.textContent = "";
@@ -112,11 +146,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return { ok: false };
     }
 
+    // risk percent (slider provides step 0.5). Accept decimal values.
     const riskPct = Number(riskSlider.value);
     if (!Number.isFinite(riskPct) || riskPct <= 0) {
       riskError.textContent = "Risk percent must be > 0.";
       return { ok: false };
     }
+
     const sl = parseFloat(stopLossEl.value);
     if (!Number.isFinite(sl) || sl <= 0) {
       slError.textContent = "Enter a positive stop loss percent.";
@@ -144,25 +180,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Formula: margin = risk / (L * (sl/100))
-    // Note: to avoid tiny numbers when sl is in %, use sl/100
     const margin = shared.riskPerTrade / (L * (shared.sl / 100));
-    // Also show calculated position size (margin * leverage)
     const positionSize = margin * L;
 
     result1.innerHTML = `
       <div class="result-card">
         <h4>Result</h4>
         <div class="result-row"><div>Wallet</div><div>${usd(shared.wallet)}</div></div>
-        <div class="result-row"><div>Risk %</div><div>${shared.riskPct}%</div></div>
+        <div class="result-row"><div>Risk %</div><div>${formatRiskLabel(shared.riskPct)}</div></div>
         <div class="result-row"><div>Risk per trade</div><div>${usd(shared.riskPerTrade)}</div></div>
         <hr />
         <div class="result-row"><div>Leverage</div><div>${L}×</div></div>
         <div class="result-row"><div>Stop Loss</div><div>${shared.sl}%</div></div>
-        <div class="result-row highlight"><div>Required Margin</div><div><strong>${usd(margin.toFixed(2))}</strong></div></div>
-        <div class="result-row"><div>Position Size (approx)</div><div>${usd(positionSize.toFixed(2))}</div></div>
+        <div class="result-row highlight"><div>Required Margin</div><div><strong>${usd(Number(margin).toFixed(2))}</strong></div></div>
+        <div class="result-row"><div>Position Size (approx)</div><div>${usd(Number(positionSize).toFixed(2))}</div></div>
         <div class="muted small" style="margin-top:8px;">
           Formula: <code>Margin = Risk / (Leverage × StopLoss%)</code>.<br/>
-          Explanation: With ${L}× leverage, using ${usd(margin.toFixed(2))} margin produces a position of ${usd(positionSize.toFixed(2))}. If stop-loss (${shared.sl}%) is hit, loss ≈ ${usd(shared.riskPerTrade.toFixed(2))}.
+          Explanation: With ${L}× leverage, using ${usd(Number(margin).toFixed(2))} margin produces a position of ${usd(Number(positionSize).toFixed(2))}. If stop-loss (${shared.sl}%) is hit, loss ≈ ${usd(Number(shared.riskPerTrade).toFixed(2))}.
         </div>
       </div>
     `;
@@ -188,10 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
       result2.innerHTML = `<p class="muted">Enter margin in USD.</p>`;
       return;
     }
-    if (String(marginVal).includes(".")) {
-      // user wanted margin whole dollars? earlier requirement was wallet only; margin can be integer but accept decimals if provided.
-      // We'll allow decimals for margin but ensure >0.
-    }
     const margin = parseFloat(marginVal);
     if (!Number.isFinite(margin) || margin <= 0) {
       result2.innerHTML = `<p class="muted">Enter a valid margin amount greater than 0.</p>`;
@@ -205,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="result-card">
         <h4>Result</h4>
         <div class="result-row"><div>Wallet</div><div>${usd(shared.wallet)}</div></div>
-        <div class="result-row"><div>Risk %</div><div>${shared.riskPct}%</div></div>
+        <div class="result-row"><div>Risk %</div><div>${formatRiskLabel(shared.riskPct)}</div></div>
         <div class="result-row"><div>Risk per trade</div><div>${usd(shared.riskPerTrade)}</div></div>
         <hr />
         <div class="result-row"><div>Provided Margin</div><div>${usd(margin)}</div></div>

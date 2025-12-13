@@ -954,10 +954,10 @@ body {
     padding: 6px 14px;
   }
 }
+//--------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-
+/* === Leverage Calculator (updated) === */
 
                                                /* === Leverage Calculator === */
 .calculator-card {
@@ -971,12 +971,30 @@ body {
   gap: 16px;
 }
 
+.back-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 700;
+  margin-right: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 160ms ease;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.02);
+}
+.back-link:hover {
+  transform: translateY(-2px);
+  color: var(--text);
+  background: rgba(255,255,255,0.04);
+}
+
+/* tabs */
 .mode-tabs {
   display: flex;
   gap: 6px;
   margin-bottom: 10px;
 }
-
 .tab {
   padding: 8px 14px;
   background: rgba(255,255,255,0.06);
@@ -986,19 +1004,18 @@ body {
   color: var(--muted);
   transition: var(--transition);
 }
-
 .tab.active {
   background: var(--gold);
   color: #000;
   font-weight: 700;
 }
 
+/* panels */
 .mode-panel {
   display: none;
   flex-direction: column;
   gap: 10px;
 }
-
 .mode-panel.active {
   display: flex;
 }
@@ -1019,11 +1036,7 @@ body {
   border: 1px solid rgba(255,255,255,0.07);
 }
 
-
-
-/* ---------------------------
-   Leverage Calculator styles
-   --------------------------- */
+/* --------------------------- Leverage Calculator styles --------------------------- */
 .calculator-card {
   padding: 18px;
   border-radius: 12px;
@@ -1046,8 +1059,31 @@ body {
 
 /* risk slider row */
 .risk-row { display:flex; gap:10px; align-items:center; }
-.risk-row input[type="range"] { width: 100%; accent-color: var(--gold); }
-.risk-value { min-width:48px; text-align:center; font-weight:700; }
+/* default accent color uses --gold (keeps your theme) */
+.risk-row input[type="range"] {
+  width: 100%;
+  accent-color: var(--gold);
+  transition: box-shadow 140ms ease, transform 120ms ease;
+  height: 6px;
+  border-radius: 6px;
+}
+
+/* When risk-high class applied: red accent */
+.risk-row input[type="range"].risk-high {
+  accent-color: #ff5a5a;
+  box-shadow: 0 4px 18px rgba(255,90,90,0.12);
+}
+
+/* risk-value label */
+.risk-value {
+  min-width:64px;
+  text-align:center;
+  font-weight:700;
+  transition: color 140ms ease, transform 120ms ease;
+}
+.risk-value.risk-high {
+  color: #ff5a5a;
+}
 
 /* Mode tabs */
 .mode-tabs { display:flex; gap:10px; margin:8px 0 12px 0; }
@@ -1059,7 +1095,7 @@ body {
   cursor: pointer;
 }
 .mode-tabs .tab.active {
-  background: linear-gradient(180deg, rgba(6, 150, 255, 0.95), rgba(9, 17, 80, 0.15));
+  background: linear-gradient(180deg, rgba(63, 173, 253, 0.95), rgba(255, 255, 255, 0.15));
   color: #000;
   font-weight: 700;
   border-color: rgba(214, 214, 214, 0.8);
@@ -1102,8 +1138,10 @@ body {
 
 
 
+//---------------------------------------------------------------------------------------------------------------------------------------
+
 /* -----------------------------------------
-   Crypto Converter — Unified Styles (Sparkline + Suggestions)
+   Crypto Converter — Unified Styles (Pulse + Suggestions)
 ----------------------------------------- */
 
 /* container grid for converter */
@@ -1243,17 +1281,17 @@ body {
 #swapBtn {
   padding: 8px 10px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(214,178,74,0.95), rgba(214,178,74,0.2));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(17, 16, 16, 0.16));
   color: #000;
   font-weight:700;
-  border: 1px solid rgba(214,178,74,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
 #swapBtn:hover { transform: translateY(-2px); }
 
 /* Mode buttons */
 .mode-btn { padding:8px 10px; border-radius: 10px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color:var(--muted); cursor:pointer; }
-.mode-btn.active { background: linear-gradient(180deg, rgba(214,178,74,0.95), rgba(214,178,74,0.16)); color:#000; font-weight:700; border-color: rgba(214,178,74,0.8); }
+.mode-btn.active { background: linear-gradient(180deg, rgba(63, 173, 253, 0.95), rgba(255, 255, 255, 0.15)); color:#000; font-weight:700; border-color: rgba(255, 255, 255, 0.8); }
 
 /* responsive behaviour tweaks */
 @media (max-width: 900px) {
@@ -1263,39 +1301,90 @@ body {
 }
 
 /* -----------------------------------------
-   Sparkline styles (clean gold line only)
+   Symbol Pulse Animation (compact, colorful-friendly)
 ----------------------------------------- */
 
-/* -----------------------------------------
-   Sparkline (compact square style)
------------------------------------------ */
-
-.sparkline-wrapper {
-  width: 200px;        /* fixed compact width */
-  height: 80px;        /* compact height */
-  margin: 10px auto 0 auto;   /* center horizontally */
-  border-radius: 10px;
-  background: rgba(255,255,255,0.02);
-  padding: 6px;
-  border: 1px solid rgba(255,255,255,0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* container for pulse */
+.symbol-pulse-container {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:flex-start;
+  padding: 8px 10px;
+  border-radius:10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  width: 220px;
 }
 
-.sparkline-wrapper svg {
-  width: 100%;
-  height: 100%;
+/* ring (animated) */
+.pulse-ring {
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  background: linear-gradient(180deg, rgba(10,15,30,0.9), rgba(8,10,20,0.9));
+  border: 2px solid rgba(255,255,255,0.03);
+  overflow:visible;
 }
 
-
-/* minimal hover glow */
-.sparkline-wrapper:hover {
-  box-shadow: 0 6px 20px rgba(214,178,74,0.04);
+/* inner small circle that pulses */
+.pulse-ring::before {
+  content: "";
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: #19c709; 
+  box-shadow: 0 6px 18px rgba(77,166,255,0.12);
+  transform: scale(1);
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1);
 }
 
-/* mobile tweak */
+/* colors for movement state */
+.pulse-ring.up::before { background: #4DE68A; box-shadow: 0 8px 22px rgba(78,230,138,0.12); }
+.pulse-ring.down::before { background: #FF7A7A; box-shadow: 0 8px 22px rgba(255,122,122,0.12); }
+
+/* symbol label */
+.symbol-label {
+  font-weight:700;
+  font-size:14px;
+  color:var(--text);
+  letter-spacing:0.6px;
+}
+
+/* price label */
+.symbol-price {
+  font-family: monospace;
+  font-weight:600;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* pop animation on update */
+.symbol-pulse-container.pulse-pop {
+  animation: pulse-pop 360ms ease-out;
+}
+@keyframes pulse-pop {
+  0% { transform: scale(0.995); opacity: 0.98; }
+  40% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* placeholder */
+.pulse-placeholder {
+  color: var(--muted);
+  text-align:center;
+}
+
+/* mobile tweaks */
 @media (max-width: 480px) {
-  .sparkline-wrapper svg { height: 48px; }
-  .suggestion-item .s-right { font-size: 12px; }
+  .symbol-pulse-container { width: 100%; gap:10px; padding:8px; }
+  .pulse-ring { width:42px; height:42px; }
+  .symbol-label { font-size:13px; }
+  .symbol-price { font-size:12px; }
 }

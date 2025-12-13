@@ -1,0 +1,64 @@
+{
+  "events": [
+    {
+      "id": "2025-12-15-ecb-rate-decision",
+      "date": "2025-12-13",
+      "time": "11:45",
+      "country": "EU",
+      "impact": "High",
+      "title": "ECB Interest Rate Decision",
+      "description": "European Central Bank announces its updated policy rate and press conference follows.",
+      "calendarCategory": "Monetary Policy",
+      "forecast": "3.50%",
+      "previous": "3.25%"
+    },
+    {
+      "id": "2025-12-16-us-cpi-core",
+      "date": "2025-12-16",
+      "time": "12:30",
+      "country": "US",
+      "impact": "High",
+      "title": "US Core CPI (YoY)",
+      "description": "Core Consumer Price Index excluding food & energy — key inflation measure.",
+      "calendarCategory": "Inflation",
+      "forecast": "3.6%",
+      "previous": "3.4%"
+    },
+    {
+      "id": "2025-12-17-us-fed-speech",
+      "date": "2025-12-17",
+      "time": "18:00",
+      "country": "US",
+      "impact": "High",
+      "title": "FOMC Member Speech — Powell",
+      "description": "FOMC Chair speech; market-moving commentary on monetary policy outlook.",
+      "calendarCategory": "Central Bank",
+      "forecast": "",
+      "previous": ""
+    },
+    {
+      "id": "2025-12-18-uk-gdp",
+      "date": "2025-12-18",
+      "time": "07:00",
+      "country": "UK",
+      "impact": "High",
+      "title": "UK GDP (MoM)",
+      "description": "Monthly GDP growth rate for the United Kingdom.",
+      "calendarCategory": "Growth",
+      "forecast": "0.2%",
+      "previous": "0.1%"
+    },
+    {
+      "id": "2025-12-20-sg-regulatory-update",
+      "date": "2025-12-20",
+      "time": "09:00",
+      "country": "SG",
+      "impact": "High",
+      "title": "Crypto Regulation Update (SG)",
+      "description": "Major regulatory update for crypto custody rules — may affect Asia-based exchanges.",
+      "calendarCategory": "Regulation",
+      "forecast": "",
+      "previous": ""
+    }
+  ]
+}

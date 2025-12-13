@@ -3,23 +3,68 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Crypto Risk Calculator — Wave Crypto Insights</title>
-  <meta name="description" content="Calculate risk-based leverage or margin for crypto futures trading. Fixed-leverage and fixed-margin modes with shared inputs and risk slider." />
+  <title>Risk Calculator — Wave Crypto Insights</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Crypto Risk Calculator — calculate risk-per-trade, required margin at a chosen leverage or compute maximum leverage for a given margin. Supports fine-grained risk slider (0.5% steps). Designed for crypto futures traders." />
+  <meta name="keywords" content="crypto risk calculator, leverage calculator, margin calculator, crypto trading risk, stop loss calculator, risk percent, leverage, margin, wave crypto insights" />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Wave Crypto Insights" />
+  <link rel="canonical" href="https://www.wavecryptoinsights.com/tools/leverage-calculator.html" />
+  <meta name="theme-color" content="#0a254a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Crypto Risk Calculator — Wave Crypto Insights" />
+  <meta property="og:description" content="Instantly compute risk-per-trade, required margin for chosen leverage, or maximum leverage for a given margin. Fine-grained risk slider (0.5% increments)." />
+  <meta property="og:url" content="https://www.wavecryptoinsights.com/tools/leverage-calculator.html" />
+  <meta property="og:site_name" content="Wave Crypto Insights" />
+  <meta property="og:image" content="https://www.wavecryptoinsights.com/assets/risk-calculator-og.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Crypto Risk Calculator — Wave Crypto Insights" />
+  <meta name="twitter:description" content="Risk-based leverage & margin calculations for crypto traders. Use a 0.5% step risk slider and toggle modes." />
+  <meta name="twitter:image" content="https://www.wavecryptoinsights.com/assets/risk-calculator-og.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crypto Risk Calculator",
+    "url": "https://www.wavecryptoinsights.com/tools/leverage-calculator.html",
+    "description": "Calculate risk-based leverage or margin for crypto futures trading. Fixed-leverage and fixed-margin modes with shared inputs and a fine-grained risk slider.",
+    "applicationCategory": "FinanceApplication",
+    "author": {
+      "@type": "Organization",
+      "name": "Wave Crypto Insights",
+      "url": "https://www.wavecryptoinsights.com"
+    }
+  }
+  </script>
+  <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <div class="brand">
-      <div class="logo"><img src="../assets/main-logo.png" alt="logo"></div>
-      <div>
-        <div class="site-title">Wave Crypto Insights</div>
-        <div class="site-sub">Elliott Wave Analysis • Crypto Insights</div>
+  <header class="header" role="banner">
+    <div class="brand" style="display:flex; align-items:center; gap:12px;">
+      <!-- Back button (simple arrow + text) -->
+      
+
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="logo"><img src="../assets/main-logo.png" alt="Wave Crypto Insights logo" style="height:40px;"></div>
+        <div>
+          <div class="site-title">Wave Crypto Insights</div>
+          <div class="site-sub">Elliott Wave Analysis • Crypto Insights</div>
+        </div>
       </div>
     </div>
-    <nav class="nav">
+
+    <nav class="nav" aria-label="Primary">
       <a href="../index.html">Home</a>
       <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
@@ -39,9 +84,24 @@
     </nav>
   </div>
 
+  <a class="back-link" href="../tools/tools.html" aria-label="Back to tools">← Back to tools</a>
+  <button id="installPWA" onclick="installPWA()" style="
+  display:none;
+  margin-bottom:18px;
+  padding:6px 14px;
+  background:var(--gold);
+  border:none;
+  border-radius:8px;
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+">
+  📥 Install App
+</button>
+
   <div class="site">
     <main class="main-column">
-      <h2>Crypto Risk Calculator</h2>
+      <h2>Risk Calculator</h2>
 
       <section class="card calculator-card" aria-labelledby="calc-title">
         <h3 id="calc-title" style="margin-top:0">Crypto Risk Calculator — Dual Mode</h3>
@@ -59,8 +119,12 @@
           <div class="shared-field">
             <label for="riskSlider" class="field-label">Risk %</label>
             <div class="risk-row">
-              <input id="riskSlider" type="range" min="0" max="100" step="1" value="1" aria-label="Risk percent slider" />
+              <!-- Slider: min 0.5, step 0.5, max 100 -->
+              <input id="riskSlider" type="range" min="0.5" max="100" step="0.5" value="1" aria-label="Risk percent slider" />
               <div class="risk-value" id="riskValue">1%</div>
+            </div>
+            <div id="riskWarn" class="muted small" style="margin-top:6px; display:none; color:#ff5a5a;" aria-live="polite">
+              ⚠️ High risk: Exceeding 5% per trade is not recommended.
             </div>
             <div class="field-desc muted small">Percent of wallet you're willing to risk on this trade.</div>
             <div class="field-error" id="riskError" aria-live="polite"></div>
@@ -146,5 +210,12 @@
 
   <script src="../app.js"></script>
   <script src="./leverage-calculator.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js");
+  }
+</script>
+<script src="./pwa-install.js"></script>
+
 </body>
 </html>

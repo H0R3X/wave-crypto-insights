@@ -1,0 +1,23 @@
+{
+  "name": "Crypto Risk Calculator",
+  "short_name": "Risk Calculator",
+  "description": "Calculate risk-per-trade, required margin, and leverage for crypto futures trading. Fast, offline-capable PWA.",
+  "start_url": "/tools/leverage-calculator.html",
+  "scope": "/tools/",
+  "display": "standalone",
+  "background_color": "#0a254a",
+  "theme_color": "#0a254a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
