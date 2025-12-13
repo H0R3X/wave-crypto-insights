@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Economic Calendar — Crypto Events & High-Impact Countdown | Wave Crypto Insights</title>
 
   <!-- SEO -->
-  <meta name="description" content="Crypto-focused Economic Calendar — high-impact events, glowing countdown to next release, market sessions. Manual JSON-powered (no API)."/>
+  <meta name="description" content="Crypto-focused economic calendar showing high-impact macro events, countdown timers, and global market sessions. Built for crypto traders. No API." />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Wave Crypto Insights" />
   <link rel="canonical" href="https://www.wavecryptoinsights.com/tools/economic-calendar/economic-calendar.html" />
@@ -45,8 +46,8 @@
 <section class="calendar-hero card">
   <h1>Economic Calendar — High Impact (Crypto Focus)</h1>
   <p class="muted">
-    Only <strong>High Impact</strong> events are shown.  
-    Edit <code>/tools/economic-calendar/events.json</code> to manage data.
+    Only <strong>high-impact</strong> macro and crypto-related events are shown.  
+    
   </p>
 
   <div class="hero-grid">
@@ -56,7 +57,7 @@
 
       <!-- NEXT EVENT -->
       <div class="next-event-card">
-        <div class="badge">NEXT</div>
+        <!-- <div class="badge">NEXT</div> -->
 
         <h2 id="nextTitle">—</h2>
         <div id="nextMeta" class="muted small">—</div>
@@ -81,13 +82,25 @@
         </div>
       </div>
 
-      <!-- HIGH IMPACT EVENTS (STACKED) -->
+      <!-- 🔹 AD SLOT: BELOW NEXT EVENT -->
+      <div class="ad-slot ad-horizontal">
+        <!-- <span class="ad-label">Advertisement</span> -->
+        <!-- Insert ad code here -->
+      </div>
+
+      <!-- HIGH IMPACT EVENTS -->
       <section class="calendar-list card">
         <h2 id="listTitle">High Impact Events</h2>
         <div id="listCount" class="muted small">—</div>
 
         <div id="eventsContainer" class="events-grid"></div>
       </section>
+
+      <!-- 🔹 AD SLOT: MID CONTENT -->
+      <div class="ad-slot ad-horizontal">
+        <!-- <span class="ad-label">Advertisement</span> -->
+        <!-- Insert ad code here -->
+      </div>
 
     </div>
 
@@ -121,23 +134,29 @@
         </div>
       </div>
 
+      <!-- 🔹 SIDEBAR AD -->
+      <div class="ad-slot ad-vertical">
+        <!-- <span class="ad-label">Advertisement</span> -->
+        <!-- Insert ad code here -->
+      </div>
+
     </aside>
 
   </div>
 </section>
-  <footer>
-      <div class="small">© Wave Crypto Insights</div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a class="muted" href="/about/about.html">About</a>
-        <a class="muted" href="/contact/contact.html">Contact</a>
-        <a class="muted" href="/privacy/privacy.html">Privacy Policy</a>
-        <a class="muted" href="/terms/terms.html">Terms of Use</a>
-        <a class="muted" href="/disclaimer/financial-disclaimer.html">Disclaimer</a>
-      </div>
-    </footer>
+
+<footer>
+  <div class="small">© Wave Crypto Insights</div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <a class="muted" href="/about/about.html">About</a>
+    <a class="muted" href="/contact/contact.html">Contact</a>
+    <a class="muted" href="/privacy/privacy.html">Privacy Policy</a>
+    <a class="muted" href="/terms/terms.html">Terms of Use</a>
+    <a class="muted" href="/disclaimer/financial-disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
 
 </main>
-
 
 <script src="./economic-calendar.js" defer></script>
 </body>
