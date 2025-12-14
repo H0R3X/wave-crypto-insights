@@ -61,7 +61,7 @@
 
         <div class="tickers" aria-hidden>
           <div class="ticker">
-            <img src="./assets/coins/btc.svg" alt="BTC" style="width:20px;height:20px">
+            <img src="./assets/coins/btc.svg" alt="BTC" style="width:40px;height:40px">
             <div style="display:flex;flex-direction:column">
               <div class="sym">BTC/USD</div>
               <div class="muted" style="font-size:12px">Bitcoin</div>
@@ -73,7 +73,7 @@
           </div>
 
           <div class="ticker">
-            <img src="./assets/coins/eth.svg" alt="ETH" style="width:20px;height:20px">
+            <img src="./assets/coins/eth.svg" alt="ETH" style="width:40px;height:40px">
             <div style="display:flex;flex-direction:column">
               <div class="sym">ETH/USD</div>
               <div class="muted" style="font-size:12px">Ethereum</div>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="ticker">
-            <img src="./assets/coins/sol.svg" alt="SOL" style="width:20px;height:20px">
+            <img src="./assets/coins/sol.svg" alt="SOL" style="width:40px;height:40px">
             <div style="display:flex;flex-direction:column">
               <div class="sym">SOL/USD</div>
               <div class="muted" style="font-size:12px">Solana</div>
@@ -96,9 +96,8 @@
             </div>
           </div>
 
-
           <div class="ticker">
-            <img src="./assets/coins/xrp.svg" alt="XRP" style="width:20px;height:20px">
+            <img src="./assets/coins/xrp.svg" alt="XRP" style="width:40px;height:40px">
             <div style="display:flex;flex-direction:column">
               <div class="sym">XRP/USD</div>
               <div class="muted" style="font-size:12px">XRP</div>
@@ -113,19 +112,18 @@
         <div style="margin-top:6px;display:flex;gap:12px;align-items:center;justify-content:space-between">
           <div style="display:flex;gap:12px;align-items:center">
             <div class="pill">Elliott Wave</div>
-            <div class="muted">Short term: Wave 4 finishing — watch $XXXXX zone</div>
+            <div class="muted">
+              Structure-based market context — trend, invalidation & key zones
+            </div>
           </div>
-          <!-- <div style="display:flex;gap:8px">
-            <button class="pill" id="read-latest">Read latest</button>
-            <button class="pill" id="share-btn">Share</button>
-          </div> -->
         </div>
-      </div>
 
+      </div>
+      <div class="ad-slot hero-ad" aria-hidden="true"></div>
       <!-- Existing hero sidebar ad -->
-      <aside class="hero-card hero-side">
-        <div class="ad-slot" aria-label="Ad placeholder (top-right)"></div>
-      </aside>
+      <!-- <aside class="hero-card hero-side">
+        
+      </aside> -->
     </section>
 
     <!-- MAIN -->
@@ -143,8 +141,9 @@
       </section>
 
       <!-- ✅ Mid-feed Ad Slot (lazy-loaded for performance) -->
-      <div class="ad-slot lazy-ad" aria-label="Mid-feed ad (lazy-loaded)"></div>
-        <!-- ===================== -->
+      <div class="ad-slot mid-feed-ad lazy-ad" aria-hidden="true"></div>
+
+<!-- ===================== -->
 <!-- Simple Q&A Section -->
 <!-- ===================== -->
 <section class="card" style="margin-top:20px">
@@ -188,16 +187,33 @@
     <aside class="sidebar">
       <div class="popular">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-          <div style="font-weight:700">Popular</div>
-          <div class="muted">Last 30 days</div>
+          <div style="font-weight:700">Must Read</div>
+          <div class="muted">Getting started</div>
         </div>
-        <ul style="list-style:none;padding:0;margin:0">
-          <li>• BTC wave count that nailed top (case study)</li>
-          <li>• How to use Fibonacci with Elliott Wave</li>
-          <li>• Best crypto projects Q3 2025</li>
-        </ul>
-      </div>
 
+        <ul style="list-style:none;padding:0;margin:0">
+          <li>
+        •    <a href="./wave-analysis/btc-wave-top-case-study.html" class="muted">
+            BTC wave count that nailed the top
+            </a>
+          </li>
+          <li>
+          • <a href="./elliott-wave-academy/chapter-2.html" class="muted">
+            How to use Fibonacci with Elliott Wave
+            </a>
+          </li>
+          <li>
+           • <a href="./top-crypto-projects/projects.html" class="muted">
+             Best crypto projects (long-term)
+            </a>
+          </li>
+        </ul>
+
+      </div>
+     <!-- Sidebar ad slot -->
+      <div class="ad-slot sidebar-ad" aria-hidden="true"></div>
+      <!--  -->
+      
       <div class="card">
         <div style="display:flex;gap:10px;align-items:center">
           <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(180deg,var(--gold), #3436b8);display:grid;place-items:center;font-weight:700;color:#071014">NL</div>

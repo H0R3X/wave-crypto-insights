@@ -379,10 +379,10 @@ footer .small { color: var(--muted); font-size: 13px; }
 
 .coin-logo {
   position: absolute;
-  top: 12px;
+  top: 2px;
   right: 12px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   object-fit: cover;
   background: rgba(255, 255, 255, 0.05);
@@ -1387,4 +1387,43 @@ body {
   .pulse-ring { width:42px; height:42px; }
   .symbol-label { font-size:13px; }
   .symbol-price { font-size:12px; }
+}
+
+
+//---------------------------------------------------------------------------------
+/* =========================
+   Ad Heatmap Slots
+   ========================= */
+
+/* Hero-side ad (desktop only) */
+.hero-ad {
+  width: 300px;
+  min-height: 250px; /* 300x250 */
+}
+
+/* Hide hero ad on smaller screens */
+@media (max-width: 1100px) {
+  .hero-ad {
+    display: none;
+  }
+}
+// --------------------------------------
+/* Mid-feed horizontal ad */
+.mid-feed-ad {
+  width: 100%;
+  min-height: 280px; /* responsive in-article ad */
+  margin: 24px 0;
+}
+// --------------------------------------
+/* Sidebar ad */
+.sidebar-ad {
+  min-height: 280px; /* 300x250 / 300x280 */
+  margin: 16px 0;
+}
+
+/* Hide sidebar ads on mobile */
+@media (max-width: 900px) {
+  .sidebar-ad {
+    display: none;
+  }
 }
