@@ -13,16 +13,16 @@
       "previous": "3.25%"
     },
     {
-      "id": "2025-12-16-us-cpi-core",
+      "id": "2025-12-16-average-hourly-earnings",
       "date": "2025-12-16",
-      "time": "12:30",
+      "time": "19:00",
       "country": "US",
       "impact": "High",
-      "title": "US Core CPI (YoY)",
-      "description": "Core Consumer Price Index excluding food & energy — key inflation measure.",
+      "title": "US Average Hourly Earnings m/m",
+      "description": "It's a leading indicator of consumer inflation - when businesses pay more for labor the higher costs are usually passed on to the consumer. It's measures: Change in the price businesses pay for labor, excluding the farming industry.",
       "calendarCategory": "Inflation",
-      "forecast": "3.6%",
-      "previous": "3.4%"
+      "forecast": "0.3%",
+      "previous": "0.2%"
     },
     {
       "id": "2025-12-17-us-fed-speech",

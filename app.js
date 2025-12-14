@@ -28,7 +28,7 @@
      Live tickers (CoinGecko)
      ------------------------- */
 
-  const prev = { btc: null, eth: null, xrp: null };
+  const prev = { btc: null, eth: null, sol: null, xrp: null};
 
   // Flash animation helper - applies class to nearest .ticker element
   function flashTicker(sym, direction) {
@@ -65,7 +65,7 @@
   // Fetch prices from CoinGecko and update tickers
   async function fetchAndUpdatePrices() {
     const url = 'https://api.coingecko.com/api/v3/simple/price'
-      + '?ids=bitcoin,ethereum,ripple'
+      + '?ids=bitcoin,ethereum,solana,ripple'
       + '&vs_currencies=usd'
       + '&include_24hr_change=true';
 
@@ -79,6 +79,9 @@
       }
       if (data.ethereum && typeof data.ethereum.usd === 'number') {
         updateTicker('eth', data.ethereum.usd, data.ethereum.usd_24h_change);
+      }
+      if (data.solana && typeof data.solana.usd === 'number') {
+        updateTicker('sol', data.solana.usd, data.solana.usd_24h_change);
       }
       if (data.ripple && typeof data.ripple.usd === 'number') {
         updateTicker('xrp', data.ripple.usd, data.ripple.usd_24h_change);
@@ -179,124 +182,7 @@
     observer.observe(lazyAd);
   }
 
- 
-//   /* -------------------------
-//    Image viewer setup (zoomable + rotatable)
-//    ------------------------- */
-// function setupImageViewer() {
-//   const viewer = document.getElementById('imageViewer');
-//   if (!viewer) return;
-
-//   const viewerImg = viewer.querySelector('img');
-//   let scale = 1, rotation = 0, originX = 0, originY = 0, isDragging = false, startX, startY;
-
-//   // Create toolbar
-//   const toolbar = document.createElement('div');
-//   toolbar.className = 'viewer-toolbar';
-//   toolbar.innerHTML = `
-//     <button class="viewer-btn" data-action="zoom-in">＋</button>
-//     <button class="viewer-btn" data-action="zoom-out">－</button>
-//     <button class="viewer-btn" data-action="rotate-left">⟲</button>
-//     <button class="viewer-btn" data-action="rotate-right">⟳</button>
-//     <button class="viewer-btn" data-action="reset">⤾</button>
-//     <button class="viewer-btn" data-action="close">✕</button>
-//   `;
-//   viewer.appendChild(toolbar);
-
-//   // Helper to update image transform
-//   function updateTransform() {
-//     viewerImg.style.transform = `translate(${originX}px, ${originY}px) scale(${scale}) rotate(${rotation}deg)`;
-//   }
-
-//   // Open viewer
-//   document.querySelectorAll('.viewable-img').forEach(img => {
-//     img.addEventListener('click', () => {
-//       viewerImg.src = img.src;
-//       scale = 1; rotation = 0; originX = 0; originY = 0;
-//       updateTransform();
-//       viewer.classList.add('active');
-//     });
-//   });
-
-//   // Close viewer
-//   toolbar.querySelector('[data-action="close"]').addEventListener('click', () => {
-//     viewer.classList.remove('active');
-//     setTimeout(() => (viewerImg.src = ''), 250);
-//   });
-
-//   // Button actions
-//   toolbar.addEventListener('click', e => {
-//     if (!e.target.dataset.action) return;
-//     switch (e.target.dataset.action) {
-//       case 'zoom-in': scale *= 1.25; break;
-//       case 'zoom-out': scale = Math.max(1, scale / 1.25); break;
-//       case 'rotate-left': rotation -= 90; break;
-//       case 'rotate-right': rotation += 90; break;
-//       case 'reset': scale = 1; rotation = 0; originX = 0; originY = 0; break;
-//     }
-//     updateTransform();
-//   });
-
-//   // Drag (pan) with mouse
-//   viewerImg.addEventListener('mousedown', e => {
-//     isDragging = true;
-//     startX = e.clientX - originX;
-//     startY = e.clientY - originY;
-//     viewerImg.style.cursor = 'grabbing';
-//   });
-//   window.addEventListener('mouseup', () => {
-//     isDragging = false;
-//     viewerImg.style.cursor = 'grab';
-//   });
-//   window.addEventListener('mousemove', e => {
-//     if (!isDragging) return;
-//     originX = e.clientX - startX;
-//     originY = e.clientY - startY;
-//     updateTransform();
-//   });
-
-//   // Wheel zoom
-//   viewer.addEventListener('wheel', e => {
-//     e.preventDefault();
-//     const delta = e.deltaY < 0 ? 1.1 : 0.9;
-//     scale = Math.min(Math.max(0.5, scale * delta), 8);
-//     updateTransform();
-//   });
-
-//   // ESC to close
-//   document.addEventListener('keydown', e => {
-//     if (e.key === 'Escape' && viewer.classList.contains('active'))
-//       viewer.classList.remove('active');
-//   });
-
-//   // Touch gestures (pinch zoom)
-//   let pinchStartDist = null, pinchStartScale = 1;
-//   viewer.addEventListener('touchstart', e => {
-//     if (e.touches.length === 2) {
-//       pinchStartDist = Math.hypot(
-//         e.touches[0].clientX - e.touches[1].clientX,
-//         e.touches[0].clientY - e.touches[1].clientY
-//       );
-//       pinchStartScale = scale;
-//     }
-//   }, { passive: false });
-
-//   viewer.addEventListener('touchmove', e => {
-//     if (e.touches.length === 2 && pinchStartDist) {
-//       e.preventDefault();
-//       const newDist = Math.hypot(
-//         e.touches[0].clientX - e.touches[1].clientX,
-//         e.touches[0].clientY - e.touches[1].clientY
-//       );
-//       scale = Math.min(Math.max(0.5, pinchStartScale * (newDist / pinchStartDist)), 8);
-//       updateTransform();
-//     }
-//   }, { passive: false });
-
-//   viewer.addEventListener('touchend', () => {
-//     pinchStartDist = null;
-//   });
-// }
+//------------------------------------------------------------------------------------------------------------------------------
 
 /* -------------------------
    Image viewer setup (zoomable + rotatable + mobile drag)
