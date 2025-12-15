@@ -43,7 +43,7 @@
     }
   }
   </script>
-  <link rel="manifest" href="./manifest.json">
+  
   <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -85,20 +85,7 @@
   </div>
 
   <a class="back-link" href="../tools/tools.html" aria-label="Back to tools">← Back to tools</a>
-  <button id="installPWA" onclick="installPWA()" style="
-  display:none;
-  margin-bottom:18px;
-  padding:6px 14px;
-  background:var(--gold);
-  border:none;
-  border-radius:8px;
-  color:#000;
-  font-weight:600;
-  cursor:pointer;
-">
-  📥 Install App
-</button>
-
+  
   <div class="site">
     <main class="main-column">
       <h2>Risk Calculator</h2>
@@ -210,12 +197,7 @@
 
   <script src="../app.js"></script>
   <script src="./leverage-calculator.js"></script>
-  <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./service-worker.js");
-  }
-</script>
-<script src="./pwa-install.js"></script>
+  
 
 </body>
 </html>

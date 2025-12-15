@@ -1886,7 +1886,7 @@ body {
 }
 /* =========================
    Ad Heatmap Slots
-   ========================= */
+========================= */
 /* Hero-side ad (desktop only) */
 .hero-ad {
   width: 300px;
@@ -1902,17 +1902,17 @@ body {
 /* Mid-feed horizontal ad */
 .mid-feed-ad {
   width: 100%;
-  min-height: 280px; /* responsive in-article ad */
+  min-height: 250px; /* responsive in-article ad */
   margin: 24px 0;
 }
 
-/* Sidebar ad */
+/* Sidebar ad (desktop only) */
 .sidebar-ad {
-  min-height: 280px; /* 300x250 / 300x280 */
+  width: 100%;
+  min-height: 300px; /* flexible: supports 300x250, 300x600 */
   margin: 16px 0;
 }
 
-/* Hide sidebar ads on mobile */
 @media (max-width: 900px) {
   .sidebar-ad {
     display: none;
