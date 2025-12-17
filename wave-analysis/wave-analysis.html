@@ -4,13 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="../style.css">
-  <title>Wave Analysis — Wave Crypto Insights</title>
-  <meta name="description" content="Daily Elliott Wave analysis on Bitcoin, Ethereum, XRP and major crypto assets.">
+
+  <title>Wave Analysis — Crypto Elliott Wave Forecasts | Wave Crypto Insights</title>
+  <meta name="description" content="Crypto-focused Elliott Wave analysis for Bitcoin, Ethereum, Solana, XRP and major assets. View structured wave timelines per coin." />
 </head>
+
 <body>
+
+  <!-- Header -->
   <header class="header">
     <div class="brand">
-      <div class="logo"><img src="../assets/main-logo.png" alt="main logo"></div>
+      <div class="logo">
+        <img src="../assets/main-logo.png" alt="Wave Crypto Insights logo">
+      </div>
       <div>
         <div class="site-title">Wave Crypto Insights</div>
         <div class="site-sub">Elliott Wave analysis • Crypto Insights</div>
@@ -19,10 +25,9 @@
 
     <nav class="nav">
       <a href="../index.html">Home</a>
-      <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
+      <a href="../wave-analysis/wave-analysis.html" class="active">Wave Analysis</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
       <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
-      <!-- <a href="../news/news.html">News</a> -->
       <a href="../tools/tools.html">Tools</a>
     </nav>
 
@@ -31,40 +36,51 @@
     </button>
   </header>
 
+  <!-- Mobile Menu -->
   <div class="mobile-menu-overlay" id="mobileMenu">
     <nav class="mobile-menu-links">
       <a href="../index.html">Home</a>
       <a href="../wave-analysis/wave-analysis.html">Wave Analysis</a>
       <a href="../elliott-wave-academy/academy.html">Elliott Wave Academy</a>
       <a href="../top-crypto-projects/projects.html">Top Crypto Projects</a>
-      <!-- <a href="../news/news.html">News</a> -->
       <a href="../tools/tools.html">Tools</a>
     </nav>
   </div>
 
   <div class="site">
+
     <main class="main-column">
       <section>
-        <h2 style="margin:0 0 8px 0">Wave Analysis</h2>
-        <div class="post-grid" id="wave-grid">
-          <!-- posts injected by JS -->
+
+        <!-- Page intro -->
+        <h2 style="margin:0 0 6px 0">Wave Analysis</h2>
+        <p class="muted" style="margin-top:0;">
+          Select a crypto asset to view its Elliott Wave timeline, scenarios and updates.
+        </p>
+
+        <!-- Coin cards grid -->
+        <div class="post-grid" id="wave-grid" aria-live="polite">
+          <!-- Coin cards injected by JS -->
         </div>
 
-    <!-- Mid-feed Ad -->
-  <div class="ad-slot mid-feed-ad lazy-ad" aria-label="Mid-feed ad placeholder"></div>
+        <!-- Mid-feed Ad (desktop + mobile, lazy-loaded) -->
+        <div
+          class="ad-slot mid-feed-ad lazy-ad"
+          aria-label="Mid-feed ad placeholder">
+        </div>
 
-        <div class="pagination" id="pagination"></div>
       </section>
     </main>
 
+    <!-- Sidebar (desktop/tablet only) -->
     <aside class="sidebar">
-    <!-- Sidebar Ad (desktop/tablet only) -->
-      <div class="ad-slot sidebar-ad"
+      <div
+        class="ad-slot sidebar-ad"
         aria-label="Sidebar ad placeholder">
       </div>
     </aside>
 
-
+    <!-- Footer -->
     <footer>
       <div class="small">© Wave Crypto Insights</div>
       <div style="display:flex;gap:12px;">
@@ -75,9 +91,14 @@
         <a class="muted" href="../disclaimer/financial-disclaimer.html">Disclaimer</a>
       </div>
     </footer>
+
   </div>
 
+  <!-- Global JS -->
   <script src="../app.js"></script>
-  <script src="../js/load-wave.js"></script>
+
+  <script src="./js/load-coins.js"></script>
+
+
 </body>
 </html>

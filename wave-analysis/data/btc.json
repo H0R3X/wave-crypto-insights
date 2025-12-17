@@ -1,0 +1,38 @@
+{
+  "coin": "Bitcoin",
+  "symbol": "BTC",
+  "description": "Bitcoin Elliott Wave analysis covering short- and medium-term market structure.",
+  "lastUpdated": "2025-10-05",
+
+  "updates": [
+    {
+      "id": "2025-10-05",
+      "date": "2025-10-05",
+      "title": "Short-term wave count suggests pullback to 61.8%",
+      "summary": "BTC appears to be completing a corrective Wave 4 with downside risk toward the 48k–51k Fibonacci support zone.",
+      "timeframe": "4H",
+
+      "bias": "Bearish pullback",
+      "confidence": "Medium",
+      "status": "Active",
+
+      "scenarios": [
+        {
+          "label": "Primary",
+          "text": "Wave 4 pullback into the 48k–51k zone before bullish continuation."
+        },
+        {
+          "label": "Invalidation",
+          "text": "A sustained break above 56k invalidates this corrective count."
+        }
+      ],
+
+      "images": {
+        "before": "btc/btc-2025-10-05-before.png",
+        "after": null
+      },
+
+      "outcome": null
+    }
+  ]
+}

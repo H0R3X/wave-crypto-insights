@@ -1,0 +1,42 @@
+[
+  {
+    "id": "btc",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "market": "Crypto Market Leader",
+    "logo": "../assets/coins/btc.svg",
+    "thumb": "../assets/thumbs/btc-bg.jpg",
+    "description": "Bitcoin Elliott Wave analysis and macro trend outlook.",
+    "priority": 1
+  },
+  {
+    "id": "eth",
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "market": "Smart Contract Platform",
+    "logo": "../assets/coins/eth.svg",
+    "thumb": "../assets/thumbs/eth-bg.jpg",
+    "description": "Ethereum Elliott Wave analysis with cycle structure and invalidation levels.",
+    "priority": 2
+  },
+  {
+    "id": "sol",
+    "name": "Solana",
+    "symbol": "SOL",
+    "market": "High-Performance Layer 1",
+    "logo": "../assets/coins/sol.svg",
+    "thumb": "../assets/thumbs/sol-bg.jpg",
+    "description": "Solana wave structure, trend strength, and breakout levels.",
+    "priority": 3
+  },
+  {
+    "id": "xrp",
+    "name": "XRP",
+    "symbol": "XRP",
+    "market": "Payments & Liquidity Network",
+    "logo": "../assets/coins/xrp.svg",
+    "thumb": "../assets/thumbs/xrp-bg.jpg",
+    "description": "XRP Elliott Wave count and higher timeframe structure.",
+    "priority": 4
+  }
+]
