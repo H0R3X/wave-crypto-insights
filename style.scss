@@ -1428,3 +1428,84 @@ body {
     display: none;
   }
 }
+
+//---------------------------------------------------------------------------------------------------
+
+/* ===== Analysis History UX ===== */
+
+.history-item {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.history-title {
+  font-weight: 600;
+}
+
+.history-preview {
+  margin-top: 8px;
+}
+
+.status-badge {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-active {
+  background: rgba(0,200,150,0.15);
+  color: #00c896;
+}
+
+.badge-completed {
+  background: rgba(100,160,255,0.15);
+  color: #64a0ff;
+}
+
+.badge-invalid {
+  background: rgba(255,90,90,0.15);
+  color: #ff5a5a;
+}
+
+.badge-neutral {
+  background: rgba(255,255,255,0.12);
+  color: #aaa;
+}
+
+/* Active history item */
+.history-item.active {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid #64a0ff;
+  padding-left: 12px;
+}
+
+.history-item.active .history-title {
+  color: #fff;
+}
+
+.history-item.active .small {
+  opacity: 1;
+}
+
+//Latest Wave Analysis header styles
+
+.latest-badge {
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 999px;
+  background: rgba(0, 200, 150, 0.15);
+  color: #00c896;
+  font-weight: 600;
+}
+
+.history-item {
+  user-select: none;
+}

@@ -6,33 +6,73 @@
 
   "updates": [
     {
-      "id": "2025-10-05",
-      "date": "2025-10-05",
-      "title": "Short-term wave count suggests pullback to 61.8%",
-      "summary": "BTC appears to be completing a corrective Wave 4 with downside risk toward the 48k–51k Fibonacci support zone.",
-      "timeframe": "4H",
+  "id": "2025-10-05",
+  "date": "2025-10-05",
+  "title": "Short-term wave count suggests pullback to 61.8%",
+  "summary": "BTC is likely completing a corrective Wave 4 before the next impulsive advance.",
+  "timeframe": "4H",
 
-      "bias": "Bearish pullback",
-      "confidence": "Medium",
-      "status": "Active",
+  "bias": "Bearish pullback",
+  "confidence": "Medium",
+  "status": "Active",
 
-      "scenarios": [
-        {
-          "label": "Primary",
-          "text": "Wave 4 pullback into the 48k–51k zone before bullish continuation."
-        },
-        {
-          "label": "Invalidation",
-          "text": "A sustained break above 56k invalidates this corrective count."
-        }
-      ],
+  "body": [
+    "Bitcoin has completed a strong impulsive advance and is now showing signs of corrective behavior.",
+    "Lower timeframe momentum divergence and overlapping price action support a Wave 4 correction scenario.",
+    "As long as price holds above the 48k region, the higher timeframe bullish structure remains intact."
+  ],
 
-      "images": {
-        "before": "btc/btc-2025-10-05-before.png",
-        "after": null
-      },
-
-      "outcome": null
+  "scenarios": [
+    {
+      "id": "primary",
+      "label": "Primary Scenario",
+      "bias": "Corrective pullback",
+      "text": "Wave 4 retraces into the 48k–51k Fibonacci support zone before continuation.",
+      "image": "btc/btc-2025-10-05-before.png"
+    },
+    {
+      "id": "alt",
+      "label": "Alternative Scenario",
+      "bias": "Bullish continuation",
+      "text": "Shallow consolidation followed by a breakout above 56k invalidates the deeper correction.",
+      "image": "btc/btc-2025-10-05-before.png"
     }
   ]
+},
+{
+  "id": "2025-10-05",
+  "date": "2025-10-05",
+  "title": "Short-term wave count suggests pullback to 61.8%",
+  "summary": "BTC is likely completing a corrective Wave 4 before the next impulsive advance.",
+  "timeframe": "4H",
+
+  "bias": "Bearish pullback",
+  "confidence": "Medium",
+  "status": "Active",
+
+  "body": [
+    "Bitcoin has completed a strong impulsive advance and is now showing signs of corrective behavior.",
+    "Lower timeframe momentum divergence and overlapping price action support a Wave 4 correction scenario.",
+    "As long as price holds above the 48k region, the higher timeframe bullish structure remains intact."
+  ],
+
+  "scenarios": [
+    {
+      "id": "primary",
+      "label": "Primary Scenario",
+      "bias": "Corrective pullback",
+      "text": "Wave 4 retraces into the 48k–51k Fibonacci support zone before continuation.",
+      "image": "btc/btc-2025-10-05-before.png"
+    },
+    {
+      "id": "alt",
+      "label": "Alternative Scenario",
+      "bias": "Bullish continuation",
+      "text": "Shallow consolidation followed by a breakout above 56k invalidates the deeper correction.",
+      "image": "btc/btc-2025-10-05-before.png"
+    }
+  ]
+}
+
+]
 }

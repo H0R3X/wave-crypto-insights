@@ -190,7 +190,7 @@
 /* -------------------------
    Image viewer setup (zoomable + rotatable + mobile drag)
    ------------------------- */
-function setupImageViewer() {
+window.setupImageViewer = function setupImageViewer() {
   const viewer = document.getElementById('imageViewer');
   if (!viewer) return;
 

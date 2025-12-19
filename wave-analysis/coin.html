@@ -56,7 +56,7 @@
     ========================== -->
     <section class="card coin-header">
       <div class="coin-hero">
-        <img id="coin-logo" src="" alt="" class="coin-hero-logo">
+        <img style="max-width: 9%;" id="coin-logo" src="" alt="" class="coin-hero-logo">
 
         <div>
           <h1 id="coin-title" class="coin-hero-title">—</h1>
@@ -69,7 +69,8 @@
          Latest Analysis (featured)
     ========================== -->
     <section class="card">
-      <h2>Latest Wave Analysis</h2>
+      <h2>Latest Wave Analysis<span class="latest-badge"> Current</span></h2>
+
 
       <div id="analysis-latest" class="analysis-featured muted">
         No analysis published yet.
@@ -103,5 +104,10 @@
 
 <script src="../app.js"></script>
 <script src="./js/load-coin.js"></script>
+<!-- FULLSCREEN IMAGE VIEWER -->
+<div id="imageViewer" class="image-viewer-overlay">
+  <img src="" alt="Zoomed chart">
+</div>
+
 </body>
 </html>
