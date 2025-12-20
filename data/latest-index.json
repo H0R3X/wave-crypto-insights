@@ -1,0 +1,36 @@
+{
+  "updated": "2025-01-15T08:30:00Z",
+  "posts": [
+    {
+      "coin": "Bitcoin",
+      "symbol": "BTC",
+      "coinKey": "btc",
+
+      "analysisId": "btc-2025-01-15-impulse",
+      "title": "BTC Impulse Structure Still Intact Above $41k",
+      "summary": "Bitcoin continues to respect the impulsive structure. Pullbacks remain corrective unless $41k breaks.",
+      "date": "2025-01-15",
+      "timeframe": "4H",
+      "status": "active",
+
+      "url": "/wave-analysis/coin.html?coin=btc#btc-2025-01-15-impulse",
+      "image": "/assets/analysis/btc-impulse-main.png"
+    },
+
+    {
+      "coin": "Ethereum",
+      "symbol": "ETH",
+      "coinKey": "eth",
+
+      "analysisId": "eth-2025-01-14-diagonal",
+      "title": "ETH Ending Diagonal Near Completion",
+      "summary": "Ethereum is likely forming an ending diagonal. A rejection could start a deeper corrective phase.",
+      "date": "2025-01-14",
+      "timeframe": "1D",
+      "status": "active",
+
+      "url": "/wave-analysis/coin.html?coin=eth#eth-2025-01-14-diagonal",
+      "image": "/assets/analysis/eth-diagonal-main.png"
+    }
+  ]
+}

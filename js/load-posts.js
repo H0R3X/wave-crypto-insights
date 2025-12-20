@@ -1,65 +1,109 @@
-// load-posts.js — dynamically load only analysis articles (homepage)
-document.addEventListener('DOMContentLoaded', async () => {
-  const postGrid = document.getElementById('post-grid');
-  if (!postGrid) return;
+// js/load-posts.js
+// Loads latest analysis cards on homepage from /data/latest-index.json
 
-  async function loadJSON(path) {
-    const res = await fetch(path, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`Failed to load ${path}`);
-    return await res.json();
+(async function () {
+  const grid = document.getElementById('post-grid');
+  const emptyMsg = document.getElementById('no-posts-msg');
+
+  if (!grid) return;
+
+  function escapeHTML(str = '') {
+    return str.replace(/[&<>"']/g, m =>
+      ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])
+    );
   }
 
-  // 🔍 Helper to detect coin symbol from title
-  function detectCoinSymbol(title) {
-    title = title.toLowerCase();
-    if (title.includes('bitcoin') || title.includes('btc')) return 'btc';
-    if (title.includes('ethereum') || title.includes('eth')) return 'eth';
-    if (title.includes('solana') || title.includes('sol')) return 'sol';
-    if (title.includes('xrp') || title.includes('ripple')) return 'xrp';
-    return null;
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    if (isNaN(d)) return '';
+    return d.toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  }
+
+  function statusBadge(status = '') {
+    const s = status.toLowerCase();
+    let cls = 'badge-neutral';
+    if (s === 'active') cls = 'badge-active';
+    if (s === 'completed') cls = 'badge-completed';
+    if (s === 'invalidated') cls = 'badge-invalid';
+
+    return status
+      ? `<span class="status-badge ${cls}">${escapeHTML(status)}</span>`
+      : '';
   }
 
   try {
-    // ✅ Load only wave analysis posts
-    const wave = await loadJSON('./data/wave-analysis.json');
+    const res = await fetch('./data/latest-index.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('Index not found');
 
-    // sort by newest date
-    wave.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const data = await res.json();
+    const posts = Array.isArray(data.posts) ? data.posts : [];
 
-    // take latest 8
-    const latest = wave.slice(0, 8);
+    if (!posts.length) {
+      if (emptyMsg) emptyMsg.style.display = 'block';
+      return;
+    }
 
-    // clear placeholder cards
-    postGrid.innerHTML = '';
+    const latest = posts.slice(0, 8);
 
-    // render
-    latest.forEach(post => {
-      const coinSymbol = detectCoinSymbol(post.title);
-      const logoPath = coinSymbol ? `./assets/coins/${coinSymbol}.svg` : null;
+    grid.innerHTML = latest.map(post => {
+      const coinLogo = post.coinKey
+        ? `/assets/coins/${post.coinKey}.svg`
+        : '';
 
-      const card = document.createElement('article');
-      card.className = 'card clickable-card';
-      card.innerHTML = `
-        ${logoPath ? `<img src="${logoPath}" alt="${coinSymbol}" class="coin-logo" loading="lazy">` : ''}
-        <div class="kicker">${post.category}</div>
-        <h3>${post.title}</h3>
-        <p>${post.excerpt}</p>
-        <div class="meta">
-          <div class="muted">${new Date(post.date).toLocaleDateString()}</div>
-          <div class="muted">•</div>
-          <div class="muted">By ${post.author}</div>
-        </div>
+      return `
+        <article class="card post-card clickable-card">
+          <a href="${post.url}" class="post-link">
+
+            <!-- Floating coin logo -->
+            ${coinLogo ? `
+              <img
+                src="${coinLogo}"
+                alt="${escapeHTML(post.coin)} logo"
+                class="coin-logo"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              >
+            ` : ''}
+
+            ${post.image ? `
+              <img
+                src="${post.image}"
+                alt="${escapeHTML(post.title)}"
+                class="post-thumb"
+              >
+            ` : ''}
+
+            <div class="post-body">
+              <div class="post-meta small muted">
+                ${escapeHTML(post.coin)} • ${post.timeframe}
+                ${statusBadge(post.status)}
+              </div>
+
+              <h3 class="post-title">
+                ${escapeHTML(post.title)}
+              </h3>
+
+              <p class="post-excerpt muted">
+                ${escapeHTML(post.summary || '')}
+              </p>
+
+              <div class="post-footer small muted">
+                ${formatDate(post.date)}
+              </div>
+            </div>
+
+          </a>
+        </article>
       `;
+    }).join('');
 
-      // Make entire card clickable
-      card.addEventListener('click', () => {
-        window.location.href = `./wave-analysis/${post.url}`;
-      });
-
-      postGrid.appendChild(card);
-    });
   } catch (err) {
-    console.error('Post loading failed:', err);
-    postGrid.innerHTML = '<p class="muted">Failed to load latest analyses.</p>';
+    console.error('Failed to load latest-index.json', err);
+    if (emptyMsg) emptyMsg.style.display = 'block';
   }
-});
+
+})();
