@@ -1994,4 +1994,74 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.analysis-summary {
+  font-weight: 500;
+}
+
+.analysis-body p {
+  margin-top: 8px;
+}
+
+.scenario-section {
+  margin-top: 20px;
+}
+
+.scenario-card {
+  border-left: 3px solid rgba(255, 255, 255, 0.15);
+  padding-left: 12px;
+  margin-top: 14px;
+}
+
+.scenario-header {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ===== Featured (Latest) Analysis Readability ===== */
+.analysis-featured {
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+.analysis-featured h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.analysis-featured .analysis-summary {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.analysis-featured .analysis-body p {
+  font-size: 15px;
+}
+
+.analysis-featured .scenario-header {
+  font-size: 14.5px;
+}
+
+/* ===== Analysis Share Button ===== */
+.analysis-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.share-btn {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #bbb;
+  border: none;
+  cursor: pointer;
+}
+
+.share-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

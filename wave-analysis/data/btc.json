@@ -35,14 +35,14 @@
       "label": "Alternative Scenario",
       "bias": "Bullish continuation",
       "text": "Shallow consolidation followed by a breakout above 56k invalidates the deeper correction.",
-      "image": "btc/btc-2025-10-05-before.png"
+      "image": "btc/btc-2025-10-04-before.png"
     }
   ]
 },
 {
   "id": "2025-10-05",
   "date": "2025-10-05",
-  "title": "Short-term wave count suggests pullback to 61.8%",
+  "title": "second test (test puorpos)",
   "summary": "BTC is likely completing a corrective Wave 4 before the next impulsive advance.",
   "timeframe": "4H",
 
@@ -62,7 +62,7 @@
       "label": "Primary Scenario",
       "bias": "Corrective pullback",
       "text": "Wave 4 retraces into the 48k–51k Fibonacci support zone before continuation.",
-      "image": "btc/btc-2025-10-05-before.png"
+      "image": "btc/btc-2025-10-04-before.png"
     },
     {
       "id": "alt",
