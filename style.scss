@@ -33,7 +33,7 @@
 html {
   min-height: 100%;
   // background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%); //OldGold
-  background: linear-gradient(135deg, rgb(1, 68, 48) 0%, #1279bee3 100%);
+  background: linear-gradient(135deg, rgb(1, 46, 32) 0%, #05609cfa 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: #192203e0;
@@ -169,7 +169,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-card {
   // background: linear-gradient(180deg, rgba(223, 191, 22, 0.24), rgba(255, 255, 255, 0.01));
   // background: linear-gradient(180deg, rgba(19, 72, 154, 0.57), rgba(1, 3, 3, 0.75));
-  background: linear-gradient(180deg, rgba(36, 255, 255, 0.57), rgba(1, 3, 0, 0.75));
+  background: linear-gradient(180deg, rgba(17, 173, 173, 0.57), rgba(1, 3, 0, 0.75));
   padding: 20px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.03);
@@ -1607,7 +1607,7 @@ body {
   top: -10px;
   right: 12px;
   font-size: 64px;
-  opacity: 0.08;
+  opacity: 0.15;
   pointer-events: none;
 }
 
