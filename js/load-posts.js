@@ -1,5 +1,6 @@
 // js/load-posts.js
 // Loads latest analysis cards on homepage from /data/latest-index.json
+// + Injects Schema.org Article markup (JSON-LD)
 
 (async function () {
   const grid = document.getElementById('post-grid');
@@ -49,6 +50,9 @@
 
     const latest = posts.slice(0, 8);
 
+    /* =========================
+       Render cards (UNCHANGED)
+    ========================= */
     grid.innerHTML = latest.map(post => {
       const coinLogo = post.coinKey
         ? `/assets/coins/${post.coinKey}.svg`
@@ -58,7 +62,6 @@
         <article class="card post-card clickable-card">
           <a href="${post.url}" class="post-link">
 
-            <!-- Floating coin logo -->
             ${coinLogo ? `
               <img
                 src="${coinLogo}"
@@ -100,6 +103,39 @@
         </article>
       `;
     }).join('');
+
+    /* =========================
+       ✅ Schema.org JSON-LD
+    ========================= */
+    const schemaArticles = latest.map(post => ({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.summary || '',
+      "image": post.image ? location.origin + post.image : undefined,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Organization",
+        "name": "Wave Crypto Insights"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Wave Crypto Insights",
+        "logo": {
+          "@type": "ImageObject",
+          "url": location.origin + "/assets/main-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": location.origin + post.url
+      }
+    }));
+
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.textContent = JSON.stringify(schemaArticles, null, 2);
+    document.head.appendChild(schemaScript);
 
   } catch (err) {
     console.error('Failed to load latest-index.json', err);

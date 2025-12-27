@@ -135,6 +135,60 @@
     document.head.appendChild(script);
   }
 
+  //--------------------------------------------------------------------------------------------------------
+  /* =========================
+   🧭 BREADCRUMB SCHEMA
+========================= */
+function injectBreadcrumbSchema(analysis, coinName) {
+  if (!analysis || !analysis.title) return;
+
+  const existing = document.getElementById('breadcrumb-schema');
+  if (existing) existing.remove();
+
+  const coinKey = getCoinFromURL();
+  const pageUrl = `${location.origin}${location.pathname}?coin=${coinKey}`;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `${location.origin}/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Wave Analysis",
+        "item": `${location.origin}/wave-analysis/wave-analysis.html`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": coinName,
+        "item": pageUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": analysis.title,
+        "item": `${pageUrl}#${analysis.id}`
+      }
+    ]
+  };
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.id = 'breadcrumb-schema';
+  script.textContent = JSON.stringify(schema, null, 2);
+
+  document.head.appendChild(script);
+}
+
+  //-----------------------------------------------------------------------------------------------------------
+
   /* =========================
      RENDER ANALYSIS
   ========================= */
@@ -218,6 +272,7 @@
 
     if (isLatest) {
       injectArticleSchema(analysis, coinName);
+      injectBreadcrumbSchema(analysis, coinName);
     }
   }
 

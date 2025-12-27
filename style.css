@@ -526,8 +526,8 @@ footer .small {
   position: absolute;
   top: 2px;
   right: 12px;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2052,10 +2052,10 @@ body {
 }
 
 .share-btn {
-  font-size: 12px;
+  font-size: 16px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(12, 73, 117, 0.79);
   color: #bbb;
   border: none;
   cursor: pointer;
@@ -2064,4 +2064,56 @@ body {
 .share-btn:hover {
   background: rgba(255, 255, 255, 0.14);
   color: #fff;
+}
+
+/* =========================
+   Support / Buy Me a Coffee Card
+========================= */
+.support-card {
+  background: linear-gradient(180deg, rgba(39, 168, 181, 0.15), rgba(15, 17, 19, 0.95));
+  border: 1px solid rgba(208, 169, 15, 0.73);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.support-card::before {
+  content: "☕";
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 64px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.support-card h3 {
+  color: #fff;
+}
+
+.support-card .support-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 6px;
+}
+
+.bmc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #b58b27;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 18px #664e15;
+}
+
+.bmc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px #756a02;
 }/*# sourceMappingURL=style.css.map */

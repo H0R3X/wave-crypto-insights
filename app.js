@@ -3,7 +3,7 @@
 // - Keeps your HTML structure and updates span values only.
 // - Also provides the mobile overlay toggle used on all pages.
 //
-// Note: subpages are one level deep and include this as "../app.js" (you confirmed that).
+
 
 (function () {
   /* -------------------------
