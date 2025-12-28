@@ -344,6 +344,8 @@ window.setupImageViewer = function setupImageViewer() {
     setupReadLatest();
     setupLazyAdLoad();
     setupImageViewer();
+    setupLogoAnimation();
+
 
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn) {
@@ -370,3 +372,24 @@ window.setupImageViewer = function setupImageViewer() {
     init();
   }
 })();
+
+
+/* -------------------------
+   Header logo click animation
+   ------------------------- */
+
+function setupLogoAnimation() {
+  const logo = document.querySelector('.logo');
+  if (!logo) return;
+
+  logo.addEventListener('click', () => {
+    // Restart animation cleanly
+    logo.classList.remove('animate');
+    void logo.offsetWidth; // force reflow
+    logo.classList.add('animate');
+  });
+
+  logo.addEventListener('animationend', () => {
+    logo.classList.remove('animate');
+  });
+}
