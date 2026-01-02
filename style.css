@@ -847,7 +847,7 @@ body {
 /* Mobile fine-tune */
 @media (max-width: 760px) {
   .header {
-    top: 8px;
+    top: -2px;
     width: calc(100% - 12px);
     border-radius: 12px;
   }
@@ -2170,4 +2170,58 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   cursor: none;
+}
+
+/* =========================
+   Footer Divider Dots
+========================= */
+/* Footer links container */
+footer > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Each footer link */
+footer > div:last-child a {
+  position: relative;
+  padding: 0 8px;
+}
+
+/* Dot between links */
+footer > div:last-child a:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -4px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+}
+
+/* =========================
+   Footer — Mobile Fix
+========================= */
+@media (max-width: 760px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  footer > div {
+    width: 100%;
+  }
+  /* Footer links container */
+  footer > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 14px;
+  }
+  footer a {
+    font-size: 12px; /* smaller, cleaner */
+    white-space: nowrap; /* prevents ugly word breaks */
+  }
+  footer .small {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */
