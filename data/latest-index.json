@@ -21,14 +21,29 @@
       "coin": "Ethereum",
       "symbol": "ETH",
       "coinKey": "eth",
-
+  
       "analysisId": "eth-2025-01-14-diagonal",
       "title": "ETH Ending Diagonal Near Completion",
       "summary": "Ethereum is likely forming an ending diagonal. A rejection could start a deeper corrective phase.",
       "date": "2025-01-14",
       "timeframe": "1D",
       "status": "active",
-
+  
+      "url": "/wave-analysis/coin.html?coin=eth#eth-2025-01-14-diagonal",
+      "image": "/assets/analysis/btc/btc-2025-10-05-before.png"
+    },
+    {
+      "coin": "Ethereum",
+      "symbol": "ETH",
+      "coinKey": "eth",
+  
+      "analysisId": "eth-2025-01-14-diagonal",
+      "title": "ETH Ending Diagonal Near Completion",
+      "summary": "Ethereum is likely forming an ending diagonal. A rejection could start a deeper corrective phase.",
+      "date": "2025-01-14",
+      "timeframe": "1D",
+      "status": "active",
+  
       "url": "/wave-analysis/coin.html?coin=eth#eth-2025-01-14-diagonal",
       "image": "/assets/analysis/btc/btc-2025-10-05-before.png"
     }

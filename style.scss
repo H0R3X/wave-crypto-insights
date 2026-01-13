@@ -1,6 +1,5 @@
-/* ==========================
-   Theme Variables (SCSS friendly)
-   ========================== */
+//  Theme Variables
+  
 :root{
   --bg: #08090b; /* main background */
   --panel: #0f1113; /* cards / panels */
@@ -16,12 +15,10 @@
   --transition: 220ms ease;
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
-
-/* ------------------ Reset & base ------------------ */
+//------------------------------------------------------------------------------------------------------------------------
 * { box-sizing: border-box; }
-
-/* ✅ Static gradient background (performance friendly) */
-//OLDGOLD//
+//-----------------------------------------gradient background------------------------------------------------------------
+                                      //OLDGOLD//
 // html {
 //   min-height: 100%;
 //   background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%);
@@ -32,14 +29,13 @@
 
 html {
   min-height: 100%;
-  // background: linear-gradient(135deg, rgba(0, 0, 0, 0.81) 0%, #594a0f 100%); //OldGold
   background: linear-gradient(135deg, rgb(93, 6, 83) 0%, rgb(1, 29, 47) 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: #192203e0;
 }
 
-
+//------------------------------------------------------------------------------------------------------------------------
 
 body {
   min-height: 100%;
@@ -85,12 +81,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 .brand { display: flex; align-items: center; gap: 12px; }
 
-//----------------------------------------Logo----------------------------------
+//----------------------------------------Logo------------------------------------------------
 .logo {
   width: 44px;
   height: 44px;
-  border-radius: 50%; /* ✅ round container */
-  overflow: hidden;   /* ✅ clips image */
+  border-radius: 50%; 
+  overflow: hidden;  
   display: grid;
   place-items: center;
   background: linear-gradient(135deg, var(--panel), rgba(255,255,255,0.02));
@@ -105,10 +101,8 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 50%; /* safety */
 }
 
-/* ===============================
-   Header Logo Click Animation
-   =============================== */
-
+   // Header Logo Click Animation
+   
 .logo {
   cursor: pointer;
   transition: transform 0.15s ease;
@@ -138,7 +132,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 
-//---------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------
 
 
 
@@ -224,7 +218,7 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(255,255,255,0.03);
 }
 
-/* tickers etc */
+/* tickers */
 .market-snapshot { display: flex; flex-direction: column; gap: 12px; }
 .tickers { display: flex; flex-wrap: wrap; gap: 10px; }
 .ticker {
@@ -363,8 +357,8 @@ footer .small { color: var(--muted); font-size: 13px; }
   to { opacity: 1; }
 }
 
-//-----------------------------------------------------------------------
-/* === Zoomable Image Viewer Enhancements === */
+
+//--- Zoomable Image Viewer Enhancements
 .viewer-toolbar {
   position: fixed;
   bottom: 24px;
@@ -414,7 +408,7 @@ footer .small { color: var(--muted); font-size: 13px; }
 }
 
 
-/* ------------------ Enhanced Card & Coin Logo ------------------ */
+/* ------------------Card & Coin Logo ------------------ */
 .card.clickable-card {
   position: relative;
   cursor: pointer;
@@ -443,10 +437,10 @@ footer .small { color: var(--muted); font-size: 13px; }
 
 .card.clickable-card:hover .coin-logo {
   transform: scale(1.08);
-  animation: logoShine 1.4s ease-in-out; /* ✨ subtle shimmer */
+  animation: logoShine 1.4s ease-in-out;
 }
 
-/* ✨ Gold shimmer animation for coin logos */
+/*Gold shimmer animation for coin logos */
 @keyframes logoShine {
   0%   { filter: brightness(1) saturate(1); }
   50%  { filter: brightness(1.5) saturate(1.2); }
@@ -486,9 +480,9 @@ footer .small { color: var(--muted); font-size: 13px; }
 }
 
 
-/* ========================== 
-   Wave Analysis — Blurred Background Card Visuals
-   ========================== */
+
+  //---------------- Wave Analysis — Blurred Background Card Visuals
+  
 .card.analysis-card {
   position: relative;
   overflow: hidden;
@@ -621,13 +615,13 @@ footer .small { color: var(--muted); font-size: 13px; }
 .table-sentiment th, .table-sentiment td { color: var(--muted); }
 .table-sentiment td { font-size: 14px; }
 
-/* ensure academy content images (diagram placeholders) are clickable for your image viewer */
+/* ensure academy content images (diagram placeholders)*/
 .diagram-placeholder.viewable-img { cursor:crosshair; }
 
 
 
 
-/* === Horizontal Scroll Fix (Desktop Safe) === */
+// Horizontal Scroll Fix
 html, body {
   overflow-x: hidden; /* Prevent horizontal scrolling globally */
 }
@@ -725,7 +719,7 @@ body {
   margin-top: 6px;
 }
 
-/* === Fix: Keep button at bottom even if tags wrap === */
+/* === Keep button at bottom even if tags wrap === */
 
 .project-card {
   display: flex;
@@ -762,7 +756,7 @@ body {
 .tag-infrastructure { background: rgba(130, 90, 255, 0.25); }
 
 
-/* === Projects — enhancements (append to style.scss) === */
+/* === Projects*/
 
 /* price & meta */
 .price-block { display:flex; flex-direction:column; gap:2px; }
@@ -812,7 +806,7 @@ body {
   .score-block { min-width:100%; width:100%; }
 }
 
-/* category tag colors (already in your file, but included here for completeness) */
+/* category tag colors */
 .tag-layer1 { background: rgba(66, 135, 245, 0.15); color: var(--text); padding:4px 8px; border-radius:999px; margin-right:6px; display:inline-block; }
 .tag-defi { background: rgba(255, 187, 0, 0.12); color:var(--text); padding:4px 8px; border-radius:999px; margin-right:6px; display:inline-block; }
 .tag-ai { background: rgba(0, 255, 170, 0.12); color:var(--text); padding:4px 8px; border-radius:999px; margin-right:6px; display:inline-block; }
@@ -825,9 +819,9 @@ body {
 .project-desc { min-height: 40px; } /* keeps cards visually consistent */
 
 
-/* -----------------------------------------
-   PROJECT CARDS — LAYOUT + AESTHETICS
------------------------------------------ */
+
+// PROJECT CARDS — LAYOUT
+
 
 .project-card {
   background: rgba(255, 255, 255, 0.06);
@@ -848,7 +842,7 @@ body {
   }
 }
 
-/* The new card-body + card-footer system */
+/*card-body + card-footer system */
 .project-card .card-body {
   flex: 1;
   display: flex;
@@ -954,7 +948,7 @@ body {
 }
 
 /* -----------------------------------------
-   GRID FIXES (consistent height system)
+   GRID
 ----------------------------------------- */
 #projects-grid {
   display: grid;
@@ -1006,9 +1000,9 @@ body {
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
 
-/* === Leverage Calculator (updated) === */
+/* === Leverage Calculator=== */
 
-                                               /* === Leverage Calculator === */
+           /* === Leverage Calculator === */
 .calculator-card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
@@ -1190,7 +1184,7 @@ body {
 //---------------------------------------------------------------------------------------------------------------------------------------
 
 /* -----------------------------------------
-   Crypto Converter — Unified Styles (Pulse + Suggestions)
+   Crypto Converter 
 ----------------------------------------- */
 
 /* container grid for converter */
@@ -1248,7 +1242,7 @@ body {
    Converter UI (suggestions + swap + results)
 ----------------------------------------- */
 
-/* suggestions list (rich items with icon + symbol + name + price) */
+/* suggestions list*/
 .suggestions {
   position: absolute;
   top: calc(100% + 8px);
@@ -1350,7 +1344,7 @@ body {
 }
 
 /* -----------------------------------------
-   Symbol Pulse Animation (compact, colorful-friendly)
+   Symbol Pulse Animation
 ----------------------------------------- */
 
 /* container for pulse */
@@ -1773,5 +1767,3 @@ footer > div:last-child a:not(:last-child)::after {
     font-size: 12px;
   }
 }
-
-
