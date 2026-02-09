@@ -213,14 +213,16 @@ function injectBreadcrumbSchema(analysis, coinName) {
 
         <div class="muted small">
           ${formatDate(analysis.date)} • ${analysis.timeframe}
-          ${analysis.bias ? `• ${escapeHTML(analysis.bias)}` : ''}
+          ${analysis.bias ? `• Bias:  ${escapeHTML(analysis.bias)}` : ''}
           ${statusBadge(analysis.status)}
         </div>
+        
 
         ${analysis.summary
-          ? `<p class="analysis-summary">${escapeHTML(analysis.summary)}</p>`
+          ? `<p class="analysis-summary">Summary: ${escapeHTML(analysis.summary)}</p>`
           : ''}
-
+        <hr>
+        <br>
         ${Array.isArray(analysis.body) && analysis.body.length
           ? `
             <div class="analysis-body">
@@ -253,6 +255,7 @@ function injectBreadcrumbSchema(analysis, coinName) {
                   ${s.image
                     ? `<img src="../assets/analysis/${s.image}" class="viewable-img" alt="">`
                     : ''}
+                  ${s.image2? `<img src="../assets/analysis/${s.image2}" class="viewable-img" alt="">`: ''}
                 </div>
               `).join('')}
             </div>

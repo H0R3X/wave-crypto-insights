@@ -224,7 +224,7 @@ img {
 }
 
 .hero-card {
-  background: linear-gradient(180deg, rgba(8, 195, 72, 0.57), rgba(0, 0, 0, 0.75));
+  background: linear-gradient(180deg, rgba(8, 169, 195, 0.57), rgba(0, 0, 0, 0.75));
   padding: 20px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -2076,14 +2076,14 @@ body {
   font-size: 16px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(12, 73, 117, 0.79);
-  color: #bbb;
+  background: rgb(255, 255, 255);
+  color: #000000;
   border: none;
   cursor: pointer;
 }
 
 .share-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgb(86, 80, 80);
   color: #fff;
 }
 

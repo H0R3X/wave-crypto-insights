@@ -2,10 +2,91 @@
   "coin": "Bitcoin",
   "symbol": "BTC",
   "description": "Bitcoin Elliott Wave analysis covering short- and medium-term market structure.",
-  "lastUpdated": "2025-10-05",
+  "lastUpdated": "2026-02-09",
+
+
+
+
+
+
 
 
   "updates": [
+    {
+  "id": "2026-02-09-a",
+  "date": "2026-02-09",
+  "title": "Bitcoin impulse structure shows Wave 4 pause inside final Wave 5",
+  "summary": "Bitcoin is currently moving inside a small corrective wave before the final part of a downward impulse may continue.",
+  "timeframe": "4H",
+
+  "bias": "Bearish continuation",
+  "confidence": "Medium",
+  "status": "Active",
+
+  "body": [
+    "As discussed earlier, Bitcoin appears to be following a flat corrective structure that already completed its Wave C movement. After that correction ended, the market started moving down in a new impulsive sequence.",
+    "Inside this downward impulse, the market now seems to be forming the final Wave 5. Impulse waves usually move in five smaller waves, and price currently looks like it is inside the Wave 4 correction of that Wave 5.",
+    "Wave 4 corrections often move sideways and take time to complete. The current structure still looks unfinished, which suggests the market may continue consolidating before the final sub-wave begins.",
+    "Traders can use this wave structure together with tools like SMC levels, ICT concepts, Wyckoff accumulation or distribution ideas, and indicators such as RSI, CVD, or trendline breaks to understand market context better. Waiting for the correction to complete may help confirm the next move. This view is based on wave structure only and is for educational purposes. Crypto markets are highly risky. Always do your own research."
+  ],
+
+  "scenarios": [
+    {
+      "id": "primary",
+      "label": "Primary Scenario",
+      "bias": "Bearish continuation after correction",
+      "text": "The current Wave 4 correction inside the final Wave 5 continues to develop sideways before finishing. After this correction is complete, the last sub-wave of the impulse may push price downward again, continuing the existing bearish structure.",
+      "image": "btc/BTCUSD_2026-02-09_09-57-41.png",
+      "image2": "btc/BTCUSD_2026-02-09_10-12-12.png"
+    },
+    {
+      "id": "alt",
+      "label": "Alternative Scenario",
+      "text": "If the correction grows larger than expected, the market may be forming a more complex corrective structure instead of a simple Wave 4. In that case, the impulse continuation could be delayed, and traders may need to wait for clearer structure confirmation before forming expectations."
+    }
+  ]
+},  
+
+
+
+
+
+
+    {
+  "id": "2026-01-14-a",
+  "date": "2026-01-14",
+  "title": "Bitcoin 4H chart shows late-stage corrective wave structure",
+  "summary": "Bitcoin appears to be completing a complex corrective wave before a possible continuation of the higher timeframe downtrend.",
+  "timeframe": "4H",
+
+  "bias": "Bearish continuation after correction",
+  "confidence": "Medium",
+  "status": "Active",
+
+  "body": [
+    "On the 4H chart, Bitcoin is moving inside a larger corrective structure rather than a strong trend. This correction is part of a higher timeframe bearish context.",
+    "The structure looks like a flat correction, and the market appears to be forming the final Wave C of that flat. Wave C usually moves in an impulsive manner, even though it belongs to a correction.",
+    "Inside this Wave C, price seems to be developing its 4th wave. This internal wave shows a complex shape, including a double zigzag and a triangle, which suggests the correction is taking time rather than moving fast.",
+    "This Wave 4 is forming within a WXY structure, and a channel can be drawn around it. Watching whether price respects or breaks this channel can help traders understand when the correction may be ending.",
+    "This wave view is based on structure only and can be used as confluence with tools like SMC, ICT concepts, Wyckoff phases, or momentum indicators. This view is for educational purposes only. Crypto markets are highly risky. Always do your own research."
+  ],
+
+  "scenarios": [
+    {
+      "id": "primary",
+      "label": "Primary Scenario",
+      "bias": "Bearish continuation after correction",
+      "text": "The market continues to complete the current Wave 4 correction inside Wave C. Once this correction is finished, a Wave 5 move to the downside may begin, aligning with the higher timeframe bearish bias. Traders should stay patient and observe structure and additional bearish signs before considering any action, as this analysis is based on wave behavior only and not on guaranteed outcomes.",
+      "image": "btc/BTCUSD_2026-01-14_11-08-50.png"
+    }
+  ]
+},
+
+
+
+
+
+
     {
   "id": "2025-10-05-a",
   "date": "2025-10-05",
@@ -15,7 +96,7 @@
 
   "bias": "Bearish pullback",
   "confidence": "Medium",
-  "status": "Active",
+  "status": "invalid",
 
   "body": [
     "Bitcoin has completed a strong impulsive advance and is now showing signs of corrective behavior.",
@@ -37,43 +118,8 @@
       "bias": "Bullish continuation",
       "text": "Shallow consolidation followed by a breakout above 56k invalidates the deeper correction.",
       "image": "btc/btc-2025-10-04-before.png"
-    }
-  ]
-},
-{
-  "id": "2025-10-05-b",
-  "date": "2025-10-05",
-  "title": "second test (test puorpos)",
-  "summary": "BTC is likely completing a corrective Wave 4 before the next impulsive advance.",
-  "timeframe": "4H",
-
-  "bias": "Bearish pullback",
-  "confidence": "Medium",
-  "status": "Active",
-
-  "body": [
-    "Bitcoin has completed a strong impulsive advance and is now showing signs of corrective behavior.",
-    "Lower timeframe momentum divergence and overlapping price action support a Wave 4 correction scenario.",
-    "As long as price holds above the 48k region, the higher timeframe bullish structure remains intact."
-  ],
-
-  "scenarios": [
-    {
-      "id": "primary",
-      "label": "Primary Scenario",
-      "bias": "Corrective pullback",
-      "text": "Wave 4 retraces into the 48k–51k Fibonacci support zone before continuation.",
-      "image": "btc/btc-2025-10-04-before.png"
-    },
-    {
-      "id": "alt",
-      "label": "Alternative Scenario",
-      "bias": "Bullish continuation",
-      "text": "Shallow consolidation followed by a breakout above 56k invalidates the deeper correction.",
-      "image": "btc/btc-2025-10-05-before.png"
     }
   ]
 }
-
 ]
 }

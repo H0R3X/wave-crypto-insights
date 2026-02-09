@@ -1,20 +1,20 @@
 {
-  "updated": "2025-01-15T08:30:00Z",
+  "updated": "2026-01-14T11:08:00Z",
   "posts": [
     {
       "coin": "Bitcoin",
       "symbol": "BTC",
       "coinKey": "btc",
 
-      "analysisId": "btc-2025-01-15-impulse",
-      "title": "BTC Impulse Structure Still Intact Above $41k",
-      "summary": "Bitcoin continues to respect the impulsive structure. Pullbacks remain corrective unless $41k breaks.",
-      "date": "2025-01-15",
+      "analysisId": "btc-2026-01-14-impulse",
+      "title": "Bitcoin impulse structure shows Wave 4 pause inside final Wave 5",
+      "summary": "Bitcoin is currently moving inside a small corrective wave before the final part of a downward impulse may continue.",
+      "date": "2026-02-09",
       "timeframe": "4H",
       "status": "active",
 
-      "url": "/wave-analysis/coin.html?coin=btc#btc-2025-01-15-impulse",
-      "image": "/assets/analysis/btc/btc-2025-10-04-before.png"
+      "url": "/wave-analysis/coin.html?coin=btc#btc-2026-01-14-impulse",
+      "image": "assets/analysis/btc/BTCUSD_2026-02-09_09-57-41.png"
     },
 
     {
@@ -33,13 +33,13 @@
       "image": "/assets/analysis/btc/btc-2025-10-05-before.png"
     },
     {
-      "coin": "Ethereum",
-      "symbol": "ETH",
-      "coinKey": "eth",
+      "coin": "Solana",
+      "symbol": "SOL",
+      "coinKey": "sol",
   
       "analysisId": "eth-2025-01-14-diagonal",
-      "title": "ETH Ending Diagonal Near Completion",
-      "summary": "Ethereum is likely forming an ending diagonal. A rejection could start a deeper corrective phase.",
+      "title": "SOL Ending Diagonal Near Completion",
+      "summary": "Solana is likely forming an ending diagonal. A rejection could start a deeper corrective phase.",
       "date": "2025-01-14",
       "timeframe": "1D",
       "status": "active",
